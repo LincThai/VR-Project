@@ -12,8 +12,8 @@ public class Spawner : MonoBehaviour
     [Tooltip("How many minions will spawn in total.")]
     public int spawnAmount;
     [Header("Agent Variables")]
-    [Tooltip("Enemy to be spawned.")]
-    public GameObject enemyPrefab;
+    [Tooltip("Enemies to be spawned.")]
+    public GameObject[] enemyPrefabs;
     [Tooltip("Where the enemy will go to.")]
     public GameObject goal;
 
@@ -57,7 +57,7 @@ public class Spawner : MonoBehaviour
 
             spawnCount++;
             time = 0.0f;
-            newAgent = Instantiate(enemyPrefab, newPos, transform.rotation);
+            newAgent = Instantiate(enemyPrefabs[0], newPos, transform.rotation);
             agentsMove = newAgent.GetComponent<Move>();
             agentsMove.goal = goal;
         }

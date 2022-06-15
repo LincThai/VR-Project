@@ -21,7 +21,8 @@ public class Spawner : MonoBehaviour
     Move agentsMove;
 
     float time = 0.0f;
-    int spawnCount = 0;
+    [Header("Don't Change")]
+    public int spawnCount = 0;
 
     // Start is called before the first frame update
     void Start()

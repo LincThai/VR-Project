@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    [Header("Spawn Manager Variables")]
+    [Tooltip("The spawn manager that controls this spawner.")]
+    public GameObject myManager;
+    SpawnManager spawnManager;
+
     [Header("Spawning Variables")]
     [Tooltip("How far from the spawner enemies will be spawned.")]
     public float spawnRadius;
     [Tooltip("How often a minion will spawn in seconds.")]
     public float spawnInterval;
-    [Tooltip("How many minions will spawn in total.")]
-    public int spawnAmount;
     [Header("Agent Variables")]
     [Tooltip("Enemies to be spawned.")]
     public GameObject[] enemyPrefabs;
@@ -21,25 +24,22 @@ public class Spawner : MonoBehaviour
     Move agentsMove;
 
     float time = 0.0f;
-    [Header("Don't Change")]
-    [Tooltip("Don't Change.")]
-    public int spawnCount = 0;
-    [Tooltip("Don't Change.")]
-    public int specialUnitChance = 0;
+
+    int specialUnitChance = 0;
     int unitChanceValue = 0;
     int unitIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        spawnManager = myManager.GetComponent<SpawnManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= spawnInterval && spawnCount < spawnAmount)
+        if (time >= spawnInterval && spawnManager.GetSpawnCount() <= spawnManager.enemySpawnTotal)
         {
             float xOffset;
             float zOffset;
@@ -70,7 +70,7 @@ public class Spawner : MonoBehaviour
                 unitIndex = 0;
             }
 
-            spawnCount++;
+            spawnManager.IncrementCounts();
             time = 0.0f;
             newAgent = Instantiate(enemyPrefabs[unitIndex], newPos, transform.rotation);
             agentsMove = newAgent.GetComponent<Move>();

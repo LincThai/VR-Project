@@ -25,7 +25,6 @@ public class Spawner : MonoBehaviour
 
     float time = 0.0f;
 
-    int specialUnitChance = 0;
     int unitChanceValue = 0;
     int unitIndex = 0;
 
@@ -39,7 +38,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= spawnInterval && spawnManager.GetSpawnCount() <= spawnManager.enemySpawnTotal)
+        if (time >= spawnInterval && spawnManager.GetSpawnCount() < spawnManager.enemySpawnTotal)
         {
             float xOffset;
             float zOffset;
@@ -61,7 +60,7 @@ public class Spawner : MonoBehaviour
             }
 
             unitChanceValue = Random.Range(0, 101);
-            if (unitChanceValue <= specialUnitChance)
+            if (unitChanceValue <= spawnManager.specialUnitChance)
             {
                 unitIndex = Random.Range(0, 3);
             }

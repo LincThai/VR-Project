@@ -32,8 +32,6 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("enemyCount:");
-        Debug.Log(enemyCount);
         if (newRound && spawnCount != 0)
         {
             spawnCount = 0;

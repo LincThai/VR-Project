@@ -22,7 +22,12 @@ public class Spawner : MonoBehaviour
 
     float time = 0.0f;
     [Header("Don't Change")]
+    [Tooltip("Don't Change.")]
     public int spawnCount = 0;
+    [Tooltip("Don't Change.")]
+    public int specialUnitChance = 0;
+    int unitChanceValue = 0;
+    int unitIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -55,9 +60,19 @@ public class Spawner : MonoBehaviour
 
             }
 
+            unitChanceValue = Random.Range(0, 101);
+            if (unitChanceValue <= specialUnitChance)
+            {
+                unitIndex = Random.Range(0, 3);
+            }
+            else
+            {
+                unitIndex = 0;
+            }
+
             spawnCount++;
             time = 0.0f;
-            newAgent = Instantiate(enemyPrefabs[0], newPos, transform.rotation);
+            newAgent = Instantiate(enemyPrefabs[unitIndex], newPos, transform.rotation);
             agentsMove = newAgent.GetComponent<Move>();
             agentsMove.goal = goal;
         }

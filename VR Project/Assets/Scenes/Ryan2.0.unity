@@ -417,6 +417,10 @@ PrefabInstance:
       propertyPath: goal
       value: 
       objectReference: {fileID: 732077805}
+    - target: {fileID: 7897998201181805736, guid: 66c72cb3f2d9b424c98895d3b2d9c56d, type: 3}
+      propertyPath: specialUnitChance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7897998201181805737, guid: 66c72cb3f2d9b424c98895d3b2d9c56d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -481,13 +485,13 @@ GameObject:
   - component: {fileID: 732077806}
   m_Layer: 0
   m_Name: Goal
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!136 &732077806
-CapsuleCollider:
+--- !u!65 &732077806
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -496,9 +500,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &732077807
 MeshRenderer:
@@ -849,6 +852,10 @@ PrefabInstance:
       propertyPath: goal
       value: 
       objectReference: {fileID: 732077805}
+    - target: {fileID: 7897998201181805736, guid: 66c72cb3f2d9b424c98895d3b2d9c56d, type: 3}
+      propertyPath: specialUnitChance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7897998201181805737, guid: 66c72cb3f2d9b424c98895d3b2d9c56d, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 481556814}
   - component: {fileID: 481556813}
   - component: {fileID: 481556812}
+  - component: {fileID: 481556816}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -408,6 +409,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &481556816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481556811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d210e0fa7894f4abdc49d281e94100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theManager: {fileID: 0}
+  projectileFlightTime: 5
+  range: 50
 --- !u!1 &563796402
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +842,7 @@ MonoBehaviour:
   maxSpecialUnitChance: 80
   specialUnitChanceIncrease: 1
   enemySpawnTotalScale: 0.1
+  enemyList: []
 --- !u!4 &1601963246
 Transform:
   m_ObjectHideFlags: 0

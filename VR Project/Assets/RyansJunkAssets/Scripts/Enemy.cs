@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    SpawnManager spawnManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,7 +21,13 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Finish"))
         {
+            spawnManager.RemoveFromEnemies(gameObject);
             Destroy(gameObject);
         }
+    }
+
+    public void SetManager(GameObject manager)
+    {
+        spawnManager = manager.GetComponent<SpawnManager>();
     }
 }

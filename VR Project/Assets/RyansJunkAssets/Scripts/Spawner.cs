@@ -72,8 +72,10 @@ public class Spawner : MonoBehaviour
             spawnManager.IncrementCounts();
             time = 0.0f;
             newAgent = Instantiate(enemyPrefabs[unitIndex], newPos, transform.rotation);
+            newAgent.GetComponent<Enemy>().SetManager(myManager);
             agentsMove = newAgent.GetComponent<Move>();
             agentsMove.goal = goal;
+            spawnManager.AddToEnemies(newAgent);
         }
     }
 }

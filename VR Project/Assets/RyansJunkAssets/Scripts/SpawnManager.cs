@@ -18,6 +18,7 @@ public class SpawnManager : MonoBehaviour
     [Tooltip("How much to scale up the total enemies spawned by each round. E.g 0.1 means it will increase by 10%")]
     public float enemySpawnTotalScale = 0.1f;
 
+    public List<GameObject> enemyList = new List<GameObject>();
     int enemyCount = 0;
      int spawnCount = 0;
 
@@ -38,7 +39,6 @@ public class SpawnManager : MonoBehaviour
             newRound = false;
 
             enemySpawnTotal += (int)(enemySpawnTotal * enemySpawnTotalScale);
-            Debug.Log(enemySpawnTotal);
 
             if (specialUnitChance + specialUnitChanceIncrease > maxSpecialUnitChance)
             {
@@ -78,5 +78,15 @@ public class SpawnManager : MonoBehaviour
     public int GetSpawnCount()
     {
         return spawnCount;
+    }
+
+    public void AddToEnemies(GameObject newEnemy)
+    {
+        enemyList.Add(newEnemy);
+    }
+
+    public void RemoveFromEnemies(GameObject enemy)
+    {
+        enemyList.Remove(enemy);
     }
 }

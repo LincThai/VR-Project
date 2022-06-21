@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d210e0fa7894f4abdc49d281e94100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theManager: {fileID: 0}
+  theManager: {fileID: 1601963244}
   projectileFlightTime: 5
   range: 50
 --- !u!1 &563796402

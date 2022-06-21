@@ -44,7 +44,7 @@ public class Tower : MonoBehaviour
                 Vector3 planarTarget = new Vector3(target.transform.position.x, 0, target.transform.position.z);
                 Vector3 planarPostion = new Vector3(transform.position.x, 0, transform.position.z);
 
-                float yOffset = 
+               // float yOffset = 
 
                 readyToShoot = false;
             }

@@ -6,25 +6,49 @@ using UnityEngine.XR;
 
 public class InteractingController : MonoBehaviour
 {
-
+    
     public float radius = 0.1f;
-    public float setMaxDistFromHand = 0.5f;
 
-    public float maxDistFromHand = 25;
+
+    public float maxRaycastLength = 150;
+
+    float interactBallDistFromHand;
     public float minDistFromHand = 0.1f;
 
-    public float moveSpeed = 0.5f;
-
+    public float moveSpeed = 2.5f;
+    
     public Controller leftHand;
     public Controller rightHand;
     public GameObject node;
+    
+    //if object is currently grabbed
+    bool objectGrabbed;
 
 
+    MeshRenderer ballRenderer;
 
+    //Was the interact button held last frame?
+    bool interactButtonHeldLastFrame;
+
+    //Last object hit with raycast, alongside "objecthitlastcheck" for AttemptInteract() to use if the button is pressed
+    GameObject lastObjectHit;
+    bool objectHitLastCheck;
+
+    //Laser visual
+    LaserScript laser;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        laser = this.GetComponent<LaserScript>();
+
+        interactBallDistFromHand = maxRaycastLength;
+
+        //Get ball renderer on this object
+        ballRenderer = this.GetComponent<MeshRenderer>();
+        ballRenderer.enabled = false;
+
         //gets left controller
         List<InputDevice> inputDeviceLeft = new List<InputDevice>();
         InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Controller, inputDeviceLeft);
@@ -44,9 +68,32 @@ public class InteractingController : MonoBehaviour
     void Update()
     {
 
+        laser.SetLaserPosition(150.0f);
+        laser.laserActive = true;
+
         //Physics.Raycast(Vec3 origin, Vec3 direction, out RaycastHit info, float maxDist)
         RaycastHit hit;
-        //if (Physics.Raycast())
+        if (Physics.Raycast(this.transform.position, Vector3.forward, out hit, maxRaycastLength, LayerMask.GetMask("Interactable")))
+        {
+
+            ballRenderer.enabled = true;
+            lastObjectHit = hit.rigidbody.gameObject;
+
+            if (gameObject.layer == LayerMask.NameToLayer("Interactable"))
+            {
+                objectHitLastCheck = true;
+            }
+            else
+            {
+                objectHitLastCheck = false;
+            }
+
+
+        } else
+        {
+            ballRenderer.enabled = false;
+            objectHitLastCheck = false;
+        }
 
 
     }
@@ -64,7 +111,7 @@ public class InteractingController : MonoBehaviour
     {
         Vector2 axis2D = GetAxisPos2D(controller);
         Vector2 axis2DAbs = new Vector2(Mathf.Abs(axis2D.x), Mathf.Abs(axis2D.y)); 
-        float axisX = 0;
+
 
         if (axis2DAbs.x <= axis2DAbs.y)
         {
@@ -85,31 +132,40 @@ public class InteractingController : MonoBehaviour
     //Moves the "interact" ball forwards and backwards for max 'reach'
     public void OnAxis2DTouch()
     {
-        float axisX = GetAxisPosX(leftHand);
+        if (objectGrabbed)
+        {
+            float axisX = GetAxisPosX(leftHand);
 
-        setMaxDistFromHand = Mathf.Clamp(axisX * moveSpeed * Time.deltaTime, minDistFromHand, maxDistFromHand);
+            interactBallDistFromHand = Mathf.Clamp(axisX * moveSpeed * Time.deltaTime, minDistFromHand, maxRaycastLength);
 
-        SetInteractBallDist();
+            SetInteractBallDist(interactBallDistFromHand);
+        }
     }
 
 
-    void SetInteractBallDist()
+    void SetInteractBallDist(float distance)
     {
-        Vector3 pos = new Vector3(setMaxDistFromHand, 0, 0);
-        this.transform.localPosition = pos;
+        this.transform.localPosition = Vector3.forward * distance;
 
+        //also needs to set pos of object held
     }
 
-    void TryToGrab()
+    //When the "grab" button is held down, attempt to grab
+    public void AttemptInteract()
+    {
+        SetInteractBallDist(10);
+    }
+
+    //When you let go of "grab"
+    public void StopInteract()
     {
 
     }
-
 }
 
 public class Controller
 {
-
+    [SerializeField]
     public InputDevice device;
     public Transform transform;
 }

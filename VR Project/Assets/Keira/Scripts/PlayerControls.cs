@@ -18,8 +18,6 @@ public class PlayerControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gamepad = Gamepad.current;
-        controls = new Controls();
 
 
     }
@@ -27,31 +25,15 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gamepad.leftShoulder.IsPressed())
-        {
-            PlsWork();
-        }
+
         
-
-
-        bool triggerValueLeft = false;
-        if (controls.leftHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValueLeft) && triggerValueLeft)
-        {
-            Debug.Log("Trigger on left pressed");
-            node.transform.position = leftHandTransform.transform.position;
-        }
-        bool triggerValueRight = false;
-        if (controls.leftHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValueRight) && triggerValueRight)
-        {
-            Debug.Log("Trigger on right pressed");
-            node.transform.position = rightHandTransform.transform.position;
-        }
+        
     }
 
     public void PlsWork()
     {
-        node.transform.position = leftHandTransform.transform.position;
-        Debug.Log("Text?");
+        node.transform.position = leftHandTransform.transform.position + leftHandTransform.transform.forward * 10;
+        
     }
 
 }

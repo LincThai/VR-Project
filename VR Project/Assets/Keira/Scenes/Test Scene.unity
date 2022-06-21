@@ -325,9 +325,9 @@ GameObject:
   - component: {fileID: 135554408}
   - component: {fileID: 135554407}
   - component: {fileID: 135554406}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body-Base
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1650,19 +1650,7 @@ MonoBehaviour:
     m_ActionId: 9bd36ab1-f676-4ff4-8a4d-ba0c6fb36268
     m_ActionName: Main/Toggle Cursor Lock[/Keyboard/backslash]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 467525932}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 12cda119-7fbf-4f67-9db5-e5ad3b7905ca
     m_ActionName: Input Controls/Axis 2D[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
@@ -1698,7 +1686,19 @@ MonoBehaviour:
     m_ActionId: 99383123-529b-44b3-be25-fc03e45b0117
     m_ActionName: Input Controls/Grip[/Keyboard/g]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 467525936}
+        m_TargetAssemblyTypeName: InteractingController, Assembly-CSharp
+        m_MethodName: AttemptInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 4c755f54-9a5b-4ab4-8971-86e750cce8c5
     m_ActionName: Input Controls/Trigger[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -1722,7 +1722,19 @@ MonoBehaviour:
     m_ActionId: 9a69a85f-8b0d-4959-94ff-a159876275d2
     m_ActionName: Input Controls/Secondary 2D Axis Click[/Keyboard/5]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 467525936}
+        m_TargetAssemblyTypeName: InteractingController, Assembly-CSharp
+        m_MethodName: tempOnTouch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 068c19f3-3201-418a-b101-88dcc47aa2fd
     m_ActionName: Input Controls/Primary 2D Axis Touch[/Keyboard/6]
   - m_PersistentCalls:
@@ -1768,8 +1780,9 @@ GameObject:
   - component: {fileID: 467525935}
   - component: {fileID: 467525934}
   - component: {fileID: 467525936}
+  - component: {fileID: 467525937}
   m_Layer: 0
-  m_Name: LeftHand Transform
+  m_Name: LeftHand Interaction Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1784,7 +1797,7 @@ Transform:
   m_GameObject: {fileID: 467525932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1712622937}
   m_RootOrder: 0
@@ -1851,11 +1864,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.1
-  setMaxDistFromHand: 0.5
-  maxDistFromHand: 25
+  maxRaycastLength: 150
   minDistFromHand: 0.1
   moveSpeed: 0.5
   node: {fileID: 607889173}
+--- !u!114 &467525937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467525932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7301fb6edb5c85c4aa31c8101872a433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handPos: {fileID: 1712622937}
+  laserWidth: 0.1
+  laserMaxLength: 100
+  laserActive: 0
 --- !u!1 &481133053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,9 +1992,9 @@ GameObject:
   - component: {fileID: 554593080}
   - component: {fileID: 554593079}
   - component: {fileID: 554593078}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2789,9 +2817,9 @@ GameObject:
   - component: {fileID: 946488695}
   - component: {fileID: 946488694}
   - component: {fileID: 946488693}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2881,9 +2909,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1061049742}
-  m_Layer: 0
+  - component: {fileID: 1061049743}
+  m_Layer: 6
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2904,6 +2933,18 @@ Transform:
   m_Father: {fileID: 1329358766}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1061049743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061049741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83705f47bba057548a29069ed088d698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1246094800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,9 +3085,9 @@ GameObject:
   - component: {fileID: 1342402215}
   - component: {fileID: 1342402217}
   - component: {fileID: 1342402216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Laser Thing Real
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3326,8 +3367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a1ed59674d436418ec829584d7f3d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHandTransform: {fileID: 467525932}
-  rightHandTransform: {fileID: 1828412864}
+  leftHandTransform: {fileID: 1712622936}
+  rightHandTransform: {fileID: 1965251019}
   node: {fileID: 607889173}
 --- !u!4 &1686617793
 Transform:
@@ -3337,7 +3378,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686617791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0909972, y: 15.845825, z: 210.48729}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3369,9 +3410,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712622936}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 467525933}
   m_Father: {fileID: 1866834904}

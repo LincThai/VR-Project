@@ -26,8 +26,8 @@ public class Enemy : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Projectile"))
         {
-            spawnManager.RemoveFromEnemies(gameObject);
-            Destroy(gameObject);
+            //spawnManager.RemoveFromEnemies(gameObject);
+            //Destroy(gameObject);
         }
     }
 

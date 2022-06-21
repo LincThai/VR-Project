@@ -12,6 +12,7 @@ public class Tower : MonoBehaviour
     public float projectileSpeed;
     public float range;
     public float delay;
+    public float blastRadius;
 
     BoxCollider boxCollider;
 
@@ -53,9 +54,13 @@ public class Tower : MonoBehaviour
                 }
                 if (target != null)
                 {
+                    Vector3 predictedPosition = target.transform.position + (target.GetComponent<NavMeshAgent>().velocity * target.GetComponent<NavMeshAgent>().speed);
+
                     GameObject p = Instantiate(projectile, new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), transform.rotation);
 
-                    p.GetComponent<Projectile>().SetProjectileValues(new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), target.transform.position, 200.0f, 0.2f);
+                    p.GetComponent<Projectile>().SetProjectileValues(new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), predictedPosition, 200.0f, 0.2f);
+                    p.GetComponent<Projectile>().SetSpawnManager(spawnManager);
+                    p.GetComponent<Projectile>().SetBlastRadius(blastRadius);
 
                     readyToShoot = false;
                 }

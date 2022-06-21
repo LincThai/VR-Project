@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    SpawnManager spawnManager;
+
+    List<GameObject> deleteList = new List<GameObject>();
+
     BezierCurve flightPath;
     float projectileSpeed;
+
+    float blastRadius;
 
     float t = 0.0f;
 
@@ -24,10 +30,39 @@ public class Projectile : MonoBehaviour
         projectileSpeed = pSPeed;
     }
 
+    public void SetSpawnManager(SpawnManager sManager)
+    {
+        spawnManager = sManager;
+    }
+
+    public void SetBlastRadius(float blastRad)
+    {
+        blastRadius = blastRad;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (!collision.gameObject.CompareTag("Tower"))
         {
+            if (spawnManager.enemyList.Count != 0)
+            {
+                foreach (GameObject enemy in spawnManager.enemyList)
+                {
+                    if (Vector3.Distance(transform.position, enemy.transform.position) <= blastRadius)
+                    {
+                        deleteList.Add(enemy);
+                    }
+                }
+                if (deleteList.Count != 0)
+                {
+                    foreach (GameObject enemy in deleteList)
+                    {
+                        spawnManager.RemoveFromEnemies(enemy);
+                        Destroy(enemy);
+                    }
+                }
+
+            }
             Destroy(gameObject);
         }
     }

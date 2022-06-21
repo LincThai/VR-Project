@@ -6,63 +6,60 @@ using UnityEngine.AI;
 public class Tower : MonoBehaviour
 {
     public GameObject theManager; // Being set in inspector for now but should be done in code later by whatever is used to make the towers
-    SpawnManager spawnManager; 
+    SpawnManager spawnManager;
 
-    public float projectileFlightTime;
+    public GameObject projectile;
+    public float projectileSpeed;
     public float range;
-
-    public GameObject thing;
-
-    Vector3 predictedPosition;
+    public float delay;
 
     BoxCollider boxCollider;
-    
-    BezierCurve shotCurve;
 
+    float time = 0.0f;
     bool readyToShoot = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        boxCollider = GetComponent<BoxCollider>();
-        shotCurve = new BezierCurve(new Vector3 (46.2f, 20.0f, -73.0f), new Vector3((46.2f + 20) / 2, 100, (-73.0f + 20) / 2), new Vector3(20, 0, 20));
-
-        for (float i = 0; i < 1.0f; i += 0.01f)
-        {
-            Vector3 location = new Vector3(shotCurve.FindX(i), shotCurve.FindY(i), shotCurve.FindZ(i));
-            Instantiate(thing, location, transform.rotation);
-        }
-
         spawnManager = theManager.GetComponent<SpawnManager>();
-        //rangeBoi.transform.position = new Vector3(transform.position.x + range, rangeBoi.transform.position.y, transform.position.z);
+
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (readyToShoot && spawnManager.enemyList.Count != 0)
-        //{
-        //    float distance = float.MaxValue;
-        //    GameObject target = null;
-        //    foreach (GameObject enemy in spawnManager.enemyList)
-        //    {
-        //        if (Vector3.Distance(enemy.transform.position, gameObject.transform.position) <= range && Vector3.Distance(enemy.transform.position, gameObject.transform.position) < distance)
-        //        {
-        //            distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
-        //            target = enemy;
-        //        }
-        //    }
-        //    if (target != null)
-        //    {
-        //        predictedPosition += target.GetComponent<NavMeshAgent>().velocity * projectileFlightTime;
+        time += Time.deltaTime;
+        if (!readyToShoot && time >= delay)
+        {
+            time = 0.0f;
+            readyToShoot = true;
+        }
 
-        //        Vector3 planarTarget = new Vector3(target.transform.position.x, 0, target.transform.position.z);
-        //        Vector3 planarPostion = new Vector3(transform.position.x, 0, transform.position.z);
+        if (readyToShoot)
+        {
+            if (spawnManager.enemyList.Count != 0)
+            {
+                GameObject target = null;
+                float distance = float.MaxValue;
+                foreach (GameObject enemy in spawnManager.enemyList)
+                {
+                    float d = Vector3.Distance(transform.position, enemy.transform.position);
+                    if (d <= range && d < distance)
+                    {
+                        distance = d;
+                        target = enemy;
+                    }
+                }
+                if (target != null)
+                {
+                    GameObject p = Instantiate(projectile, new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), transform.rotation);
 
-        //       // float yOffset = 
+                    p.GetComponent<Projectile>().SetProjectileValues(new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), target.transform.position, 200.0f, 0.2f);
 
-        //        readyToShoot = false;
-        //    }
-        //}
+                    readyToShoot = false;
+                }
+            }
+        }
     }
 }

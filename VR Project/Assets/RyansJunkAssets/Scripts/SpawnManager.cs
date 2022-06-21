@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
 
     public List<GameObject> enemyList = new List<GameObject>();
     int enemyCount = 0;
-     int spawnCount = 0;
+    int spawnCount = 0;
 
     bool newRound = true;
 

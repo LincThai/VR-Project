@@ -895,6 +895,17 @@
                 },
                 {
                     "name": "",
+                    "id": "3313e94c-a3f5-434a-b412-c82ef53a2f7c",
+                    "path": "<XRController>{LeftHand}/primary2DAxisTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Primary 2D Axis Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "0d5d8b6c-3d19-481a-8d8f-9f099a1a43e3",
                     "path": "<Keyboard>/7",
                     "interactions": "",

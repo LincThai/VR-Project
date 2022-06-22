@@ -20,11 +20,14 @@ public class InteractingController : MonoBehaviour
     public Controller leftHand;
     public Controller rightHand;
     public GameObject node;
-    
+
     //if object is currently grabbed
-    bool objectGrabbed;
+    bool objectGrabbed = false;
 
 
+    //ball thing
+    [Tooltip("The sphere childed to this hand")]
+    public GameObject ballChild;
     MeshRenderer ballRenderer;
 
     //Was the interact button held last frame?
@@ -46,7 +49,7 @@ public class InteractingController : MonoBehaviour
         interactBallDistFromHand = maxRaycastLength;
 
         //Get ball renderer on this object
-        ballRenderer = this.GetComponent<MeshRenderer>();
+        ballRenderer = ballChild.GetComponent<MeshRenderer>();
         ballRenderer.enabled = false;
 
         //gets left controller
@@ -67,35 +70,40 @@ public class InteractingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        laser.SetLaserPosition(150.0f);
+        
+        laser.SetLaserPosition(25.0f);
         laser.laserActive = true;
 
+        //When holding an item, it needs to do a second raycast from this items position in the same direction to position it just above the surface
         //Physics.Raycast(Vec3 origin, Vec3 direction, out RaycastHit info, float maxDist)
         RaycastHit hit;
-        if (Physics.Raycast(this.transform.position, Vector3.forward, out hit, maxRaycastLength, LayerMask.GetMask("Interactable")))
+        if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, maxRaycastLength))//, LayerMask.GetMask("Interactable")))
         {
-
+            if (hit.transform.gameObject != node)
+            {
+                node.transform.position = hit.point;
+            }
             ballRenderer.enabled = true;
-            lastObjectHit = hit.rigidbody.gameObject;
 
-            if (gameObject.layer == LayerMask.NameToLayer("Interactable"))
-            {
-                objectHitLastCheck = true;
-            }
-            else
-            {
-                objectHitLastCheck = false;
-            }
+            laser.SetLaserPosition(hit.distance);
 
+            
+            lastObjectHit = hit.transform.gameObject;
+
+
+            Debug.Log("ball distance: " + Vector3.Distance(ballChild.transform.position, this.transform.position) + ", vs reported distance: " + hit.distance);
+            SetInteractBallDist(hit.distance);
 
         } else
         {
+            //node.transform.position = this.transform.position + this.transform.forward * 10;
+            SetInteractBallDist(maxRaycastLength);
             ballRenderer.enabled = false;
             objectHitLastCheck = false;
+            
         }
 
-
+        ballRenderer.enabled = true;
     }
 
     Vector2 GetAxisPos2D(Controller controller)
@@ -145,7 +153,7 @@ public class InteractingController : MonoBehaviour
 
     void SetInteractBallDist(float distance)
     {
-        this.transform.localPosition = Vector3.forward * distance;
+        ballChild.transform.position = this.transform.position + this.transform.forward * distance;
 
         //also needs to set pos of object held
     }
@@ -153,7 +161,7 @@ public class InteractingController : MonoBehaviour
     //When the "grab" button is held down, attempt to grab
     public void AttemptInteract()
     {
-        SetInteractBallDist(10);
+        //SetInteractBallDist(10);
     }
 
     //When you let go of "grab"
@@ -169,3 +177,4 @@ public class Controller
     public InputDevice device;
     public Transform transform;
 }
+

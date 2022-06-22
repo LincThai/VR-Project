@@ -26,7 +26,7 @@ public class LaserScript : MonoBehaviour
         
         Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
         laserLineRenderer.SetPositions(initLaserPositions);
-        //laserLineRenderer.SetWidth(laserWidth, laserWidth);
+        
         laserLineRenderer.startWidth = laserWidth * 2;
         laserLineRenderer.endWidth = laserWidth;
         SetLaserColour(laserColour);
@@ -49,7 +49,7 @@ public class LaserScript : MonoBehaviour
     }
 
     //Sets the laser from the hand position, in the direction the hand is facing, for the input length
-    public void SetLaserLengthFromHand(float length)
+    public void SetLaserDistFromHand(float length)
     {
         SetLaserPos(handPos.position + (handPos.forward * laserStartDistance), handPos.position + (handPos.forward * length));
     }

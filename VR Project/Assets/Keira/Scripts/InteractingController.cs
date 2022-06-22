@@ -7,35 +7,42 @@ using UnityEngine.XR;
 public class InteractingController : MonoBehaviour
 {
     
-    public float radius = 0.1f;
+    [Header("General Raycast settings")]
 
-
+    [Tooltip("Max distance of raycast")]
     public float maxRaycastLength = 150;
+    [Tooltip("The last item hit by a raycast can still be grabbed if nothing has been looking at for x time")]
+    [Range(0f, 5f)]
+    public float maxTimeToGrab = 0.5f;
 
-    float interactBallDistFromHand;
-    public float minDistFromHand = 0.1f;
+    [Header("Scene objects to set")]
 
-    public float moveSpeed = 2.5f;
-    
+    [Tooltip("Left Hand Controller")]
     public Controller leftHand;
+    [Tooltip("Right Hand Controller")]
     public Controller rightHand;
-    public GameObject node;
-
-    //if object is currently grabbed
-    bool objectGrabbed = false;
-
-
-    //ball thing
     [Tooltip("The sphere childed to this hand")]
     public GameObject ballChild;
+    [Tooltip("Temp node I am using to see position of certain things")]
+    public GameObject node;
+
+    //ball thing - dumb ball renderer wont let me turn it off :(
     MeshRenderer ballRenderer;
 
-    //Was the interact button held last frame?
+
+
+    //Raycast data - Data needed to properly process grabbings items
+    bool objectCurrentlyHeld = false;
     bool interactButtonHeldLastFrame;
 
-    //Last object hit with raycast, alongside "objecthitlastcheck" for AttemptInteract() to use if the button is pressed
-    GameObject lastObjectHit;
-    bool objectHitLastCheck;
+
+
+    //Last object hit with raycast, alongside "objectHitLastCheck" for AttemptInteract() to use if the button is pressed
+    GameObject lastObjectHit; //Object that was last hit by raycast
+    bool objectHitLastCheck; //if an object was hit last time the raycast happened
+    float timeSinceLastRaycastHit = 0; //Alternative that might be used to object hit last raycast check,
+                                       //as it will allow a person to "grab" an object they just stopped touching
+    
 
     //Laser visual
     LaserScript laser;
@@ -45,8 +52,6 @@ public class InteractingController : MonoBehaviour
     {
 
         laser = this.GetComponent<LaserScript>();
-
-        interactBallDistFromHand = maxRaycastLength;
 
         //Get ball renderer on this object
         ballRenderer = ballChild.GetComponent<MeshRenderer>();
@@ -61,17 +66,12 @@ public class InteractingController : MonoBehaviour
         InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller, inputDeviceRight);
         rightHand.device = inputDeviceRight[0];
 
-
-
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        laser.SetLaserPosition(25.0f);
         laser.laserActive = true;
 
         //When holding an item, it needs to do a second raycast from this items position in the same direction to position it just above the surface
@@ -85,13 +85,10 @@ public class InteractingController : MonoBehaviour
             }
             ballRenderer.enabled = true;
 
-            laser.SetLaserPosition(hit.distance);
-
+            laser.SetLaserDistFromHand(hit.distance);
             
             lastObjectHit = hit.transform.gameObject;
 
-
-            Debug.Log("ball distance: " + Vector3.Distance(ballChild.transform.position, this.transform.position) + ", vs reported distance: " + hit.distance);
             SetInteractBallDist(hit.distance);
 
         } else
@@ -100,6 +97,7 @@ public class InteractingController : MonoBehaviour
             SetInteractBallDist(maxRaycastLength);
             ballRenderer.enabled = false;
             objectHitLastCheck = false;
+            laser.SetLaserDistFromHand(25.0f);
             
         }
 
@@ -140,14 +138,16 @@ public class InteractingController : MonoBehaviour
     //Moves the "interact" ball forwards and backwards for max 'reach'
     public void OnAxis2DTouch()
     {
-        if (objectGrabbed)
-        {
-            float axisX = GetAxisPosX(leftHand);
+        //probably not going to be used       
 
-            interactBallDistFromHand = Mathf.Clamp(axisX * moveSpeed * Time.deltaTime, minDistFromHand, maxRaycastLength);
+        //if (objectGrabbed)
+        //{
+        //    float axisX = GetAxisPosX(leftHand);
 
-            SetInteractBallDist(interactBallDistFromHand);
-        }
+        //    interactBallDistFromHand = Mathf.Clamp(axisX * moveSpeed * Time.deltaTime, minDistFromHand, maxRaycastLength);
+
+        //    SetInteractBallDist(interactBallDistFromHand);
+        //}
     }
 
 

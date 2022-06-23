@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 7897998201181805737}
   - component: {fileID: 7897998201181805736}
   m_Layer: 0
-  m_Name: Spawner 1
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7897998201181805739}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.622467, y: 0.5, z: -78.987076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -139,12 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2445aa610f893dc4292453b537fb086d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRadius: 7
+  myManager: {fileID: 0}
+  spawnRadius: 3
   spawnInterval: 3
-  spawnAmount: 5
   enemyPrefabs:
   - {fileID: 8744963351797770359, guid: 8edfdf83d762d7b4ca1ed0cae0f179df, type: 3}
   - {fileID: 3207406543859946223, guid: 4603045ba0872cd4e91c8e1acdbad10f, type: 3}
   - {fileID: 6608990361164066334, guid: bc3a9f93695440b418c2e90695268d44, type: 3}
   goal: {fileID: 0}
-  spawnCount: 0

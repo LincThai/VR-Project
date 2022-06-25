@@ -6,7 +6,7 @@ using UnityEngine.XR;
 
 public class InteractingController : MonoBehaviour
 {
-    
+
     [Header("General Raycast settings")]
 
     [Tooltip("Max distance of raycast")]
@@ -42,7 +42,7 @@ public class InteractingController : MonoBehaviour
     bool objectHitLastCheck; //if an object was hit last time the raycast happened
     float timeSinceLastRaycastHit = 0; //Alternative that might be used to object hit last raycast check,
                                        //as it will allow a person to "grab" an object they just stopped touching
-    
+
 
     //Laser visual
     LaserScript laser;
@@ -71,7 +71,7 @@ public class InteractingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         laser.laserActive = true;
 
         //When holding an item, it needs to do a second raycast from this items position in the same direction to position it just above the surface
@@ -79,26 +79,37 @@ public class InteractingController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, maxRaycastLength))//, LayerMask.GetMask("Interactable")))
         {
-            if (hit.transform.gameObject != node)
-            {
-                node.transform.position = hit.point;
-            }
-            ballRenderer.enabled = true;
-
-            laser.SetLaserDistFromHand(hit.distance);
-            
             lastObjectHit = hit.transform.gameObject;
 
+            //Only care about what we hit if it is an 'interactable', but still need the raycast data if it hit something else
+            if (lastObjectHit.layer == LayerMask.NameToLayer("Interactable"))
+            {
+                objectHitLastCheck = true;
+                timeSinceLastRaycastHit = 0;
+
+                
+            }
+            else
+            {
+                objectHitLastCheck = false;
+                timeSinceLastRaycastHit += Time.deltaTime;
+            }
+
+
+            ballRenderer.enabled = true;
+            laser.SetLaserDistFromHand(hit.distance);
             SetInteractBallDist(hit.distance);
 
-        } else
+        }
+        else
         {
+            timeSinceLastRaycastHit += Time.deltaTime;
             //node.transform.position = this.transform.position + this.transform.forward * 10;
             SetInteractBallDist(maxRaycastLength);
             ballRenderer.enabled = false;
             objectHitLastCheck = false;
             laser.SetLaserDistFromHand(25.0f);
-            
+
         }
 
         ballRenderer.enabled = true;
@@ -116,7 +127,7 @@ public class InteractingController : MonoBehaviour
     float GetAxisPosX(Controller controller)
     {
         Vector2 axis2D = GetAxisPos2D(controller);
-        Vector2 axis2DAbs = new Vector2(Mathf.Abs(axis2D.x), Mathf.Abs(axis2D.y)); 
+        Vector2 axis2DAbs = new Vector2(Mathf.Abs(axis2D.x), Mathf.Abs(axis2D.y));
 
 
         if (axis2DAbs.x <= axis2DAbs.y)
@@ -158,9 +169,23 @@ public class InteractingController : MonoBehaviour
         //also needs to set pos of object held
     }
 
+    //Currently does nothing until I fix this up :(
+    void SetInteractBallColour(Color colour)
+    {
+        //Need to figure out the proper way to change colour of (and also maybe size) of these via code
+        //Dont really wanna make a whole shader exclusive to a ball on the end of a pointer ya know.
+    }
+
     //When the "grab" button is held down, attempt to grab
     public void AttemptInteract()
     {
+        if (objectHitLastCheck)
+        {
+            
+        } else
+        {
+
+        }
         //SetInteractBallDist(10);
     }
 

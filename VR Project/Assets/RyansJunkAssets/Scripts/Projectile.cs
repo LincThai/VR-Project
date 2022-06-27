@@ -88,6 +88,7 @@ public class Projectile : MonoBehaviour
                         Destroy(enemy);
                     }
                 }
+
             }
             Destroy(gameObject);
         }

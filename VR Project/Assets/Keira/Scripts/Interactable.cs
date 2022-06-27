@@ -25,9 +25,7 @@ public class Interactable : MonoBehaviour
 
     /* 
      * for "Interacting controller" to ask if it can be grabbed
-     * If it returns true, IC will child this to itself, to move it around the map, thinking this is a turret
-     * 
-     * 
+     * If it returns true, It will child this to itself, to move it around the map, thinking this is a turret
      */
     public bool CanBeGrabbed()
     {
@@ -43,4 +41,17 @@ public class Interactable : MonoBehaviour
 
         return false;
     }
+
+    //If the turret got dropped without a node to connect to
+    public void Voided()
+    {
+
+    }
+
+    //If the turret is dropped onto a node.
+    public void SetToNode(GameObject Node)
+    {
+
+    }
+
 }

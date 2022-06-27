@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Turret
   - UI
+  - Node
   layers:
   - Default
   - TransparentFX

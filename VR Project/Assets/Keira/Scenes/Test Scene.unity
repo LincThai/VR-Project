@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
+  m_IndirectSpecularColor: {r: 0.28502586, g: 0.37139237, b: 0.4960093, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1815,6 +1815,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRaycastLength: 150
   maxTimeToGrab: 0.5
+  nodeGrabDistance: 15
+  turretHoverDistance: 25
   ballChild: {fileID: 1768927187}
   node: {fileID: 607889173}
 --- !u!114 &467525937
@@ -2040,7 +2042,7 @@ GameObject:
   - component: {fileID: 607889174}
   m_Layer: 0
   m_Name: Turret Node
-  m_TagString: Untagged
+  m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

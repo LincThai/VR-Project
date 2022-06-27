@@ -88259,7 +88259,7 @@ MeshFilter:
 --- !u!1001 &753369698847957681
 =======
 --- !u!1001 &718366375314504633
->>>>>>> Ryan
+>>>>>>> NewMain
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -88427,7 +88427,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4138705665885134944, guid: 5f1eeb12dca16e040a7f5203fb20f538, type: 3}
->>>>>>> Ryan
+>>>>>>> NewMain
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
@@ -88436,4 +88436,4 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
 =======
   m_SourcePrefab: {fileID: 100100000, guid: 5f1eeb12dca16e040a7f5203fb20f538, type: 3}
->>>>>>> Ryan
+>>>>>>> NewMain

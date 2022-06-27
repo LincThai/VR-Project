@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    [Tooltip("Put in the money manager")]
+    public MoneyManager moneyManager;
     [Tooltip("Put in you spawners")]
     public Spawner[] spawners;
     [Header("Spawner Variables")]

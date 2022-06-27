@@ -73,6 +73,7 @@ public class Tower : MonoBehaviour
                     p.GetComponent<Projectile>().SetProjectileValues(new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), predictedPosition, arcOffset, 0.2f);
                     p.GetComponent<Projectile>().SetSpawnManager(spawnManager);
                     p.GetComponent<Projectile>().SetBlastRadius(blastRadius);
+                    p.GetComponent<Projectile>().SetDamage(damage);
 
                     readyToShoot = false;
                 }

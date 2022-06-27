@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7d60c053146216f448b59f08da2df2b7, type: 2}
+    - target: {fileID: 5107236511093894037, guid: 8edfdf83d762d7b4ca1ed0cae0f179df, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6299183548690327858, guid: 8edfdf83d762d7b4ca1ed0cae0f179df, type: 3}
       propertyPath: m_Speed
       value: 2

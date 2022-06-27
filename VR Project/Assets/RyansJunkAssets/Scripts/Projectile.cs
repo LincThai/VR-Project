@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
     float projectileSpeed;
 
     float blastRadius;
+    float damage;
 
     float t = 0.0f;
 
@@ -40,18 +41,42 @@ public class Projectile : MonoBehaviour
         blastRadius = blastRad;
     }
 
+    public void SetDamage(float dam)
+    {
+        damage = dam;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (!collision.gameObject.CompareTag("Tower"))
         {
             if (spawnManager.enemyList.Count != 0)
             {
-                foreach (GameObject enemy in spawnManager.enemyList)
+                Enemy enemyStats;
+                if (blastRadius != 0)
                 {
-                    if (Vector3.Distance(transform.position, enemy.transform.position) <= blastRadius)
+                    foreach (GameObject enemy in spawnManager.enemyList)
                     {
-                        deleteList.Add(enemy);
+                        if (Vector3.Distance(transform.position, enemy.transform.position) <= blastRadius)
+                        {
+                            enemyStats = enemy.GetComponent<Enemy>();
+                            enemyStats.health -= damage;
+                            if (enemyStats.health <= 0)
+                            {
+                                deleteList.Add(enemy);
+                            }
+                        }
                     }
+                }
+                else
+                {
+                    enemyStats = collision.gameObject.GetComponent<Enemy>();
+                    enemyStats.health -= damage;
+                    if (enemyStats.health <= 0)
+                    {
+                        deleteList.Add(collision.gameObject);
+                    }
+
                 }
                 if (deleteList.Count != 0)
                 {

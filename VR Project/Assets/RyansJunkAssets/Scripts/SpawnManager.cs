@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (newRound && spawnCount != 0)
+        if (newRound && spawnCount == enemySpawnTotal)
         {
             spawnCount = 0;
             newRound = false;

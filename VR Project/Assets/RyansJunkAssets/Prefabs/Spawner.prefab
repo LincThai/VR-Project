@@ -133,3 +133,72 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD
+--- !u!1 &8629740818497942161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8629740818497942163}
+  - component: {fileID: 8629740818497942162}
+  m_Layer: 0
+<<<<<<< HEAD
+  m_Name: Spawner (1)
+=======
+  m_Name: Spawner
+>>>>>>> Lincoln
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8629740818497942163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 8629740818497942161}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 85.6, y: 0, z: -0.8}
+=======
+  m_GameObject: {fileID: 7897998201181805739}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.622467, y: 0.5, z: -78.987076}
+>>>>>>> Lincoln
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8629740817576787302}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8629740818497942162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8629740818497942161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2445aa610f893dc4292453b537fb086d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myManager: {fileID: 0}
+<<<<<<< HEAD
+  spawnRadius: 7
+=======
+  spawnRadius: 3
+>>>>>>> Lincoln
+  spawnInterval: 3
+  enemyPrefabs:
+  - {fileID: 8744963351797770359, guid: 8edfdf83d762d7b4ca1ed0cae0f179df, type: 3}
+  - {fileID: 3207406543859946223, guid: 4603045ba0872cd4e91c8e1acdbad10f, type: 3}
+  - {fileID: 6608990361164066334, guid: bc3a9f93695440b418c2e90695268d44, type: 3}
+  goal: {fileID: 0}
+=======
+>>>>>>> Ryan

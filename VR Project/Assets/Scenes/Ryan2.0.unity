@@ -422,11 +422,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theManager: {fileID: 1601963244}
-  projectile: {fileID: 2002128067967146123, guid: 1c5ea2e27bb1594459661580f8233f03, type: 3}
   projectileSpeed: 0.2
   range: 120
   delay: 10
+  arcOffset: 200
+  projectile: {fileID: 2002128067967146123, guid: 1c5ea2e27bb1594459661580f8233f03, type: 3}
   blastRadius: 20
+  damage: 0
 --- !u!1 &563796402
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +758,7 @@ MonoBehaviour:
   spawners:
   - {fileID: 7897998201803884328}
   enemySpawnTotal: 10
-  specialUnitChance: 80
+  specialUnitChance: 0
   maxSpecialUnitChance: 80
   specialUnitChanceIncrease: 1
   enemySpawnTotalScale: 0.1

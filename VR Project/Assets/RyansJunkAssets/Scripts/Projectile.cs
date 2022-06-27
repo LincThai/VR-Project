@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour
 
     public void SetProjectileValues(Vector3 startPosition, Vector3 targetPosition, float controlPointHeight, float pSPeed)
     {
-        flightPath = new BezierCurve(startPosition, new Vector3((startPosition.x + targetPosition.x) / 2, controlPointHeight, (startPosition.z + targetPosition.z) / 2), targetPosition);
+        flightPath = new BezierCurve(startPosition, new Vector3((startPosition.x + targetPosition.x) / 2, ((startPosition.y + targetPosition.y) / 2) + controlPointHeight, (startPosition.z + targetPosition.z) / 2), targetPosition);
         projectileSpeed = pSPeed;
     }
 
@@ -57,6 +57,7 @@ public class Projectile : MonoBehaviour
                 {
                     foreach (GameObject enemy in deleteList)
                     {
+                        spawnManager.DecrementEnemyCount();
                         spawnManager.RemoveFromEnemies(enemy);
                         Destroy(enemy);
                     }

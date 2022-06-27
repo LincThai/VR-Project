@@ -21,8 +21,8 @@ public class SpawnManager : MonoBehaviour
     public float enemySpawnTotalScale = 0.1f;
 
     public List<GameObject> enemyList = new List<GameObject>();
-    int enemyCount = 0;
-    int spawnCount = 0;
+    public int enemyCount = 0;
+    public int spawnCount = 0;
 
     bool newRound = true;
 
@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (newRound && spawnCount == enemySpawnTotal)
+        if (newRound && spawnCount == enemySpawnTotal && enemyCount == 0)
         {
             spawnCount = 0;
             newRound = false;

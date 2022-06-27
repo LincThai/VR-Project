@@ -15,13 +15,16 @@ public class InteractingController : MonoBehaviour
     public float maxTimeToGrab = 0.5f;
     [Tooltip("Max distance from node to 'grab' the object being held")]
     public float nodeGrabDistance = 15.0f;
-    [Tooltip("")]
+    [Tooltip("Distance the turret will hover over the ground/node while it is held")]
     public float turretHoverDistance = 25.0f;
 
     [Header("Tag and Layer names")]
     [Tooltip("Tag name of Nodes")]
     string nodeTag = "Node";
-
+    [Tooltip("Tag name of Turrets")]
+    string turretTag = "Turret";
+    [Tooltip("Layer name of Interactables")]
+    string interactableLayer = "Interactable";
 
     [Header("Scene objects to set")]
 
@@ -43,7 +46,7 @@ public class InteractingController : MonoBehaviour
 
     //Raycast data - Data needed to properly process grabbings items
     bool isObjectHeld = false;
-    bool interactButtonHeldLastFrame;
+    bool interactButtonHeldLastFrame = false;
     GameObject objectBeingHeld = null;
     //Closest node to item being held
     GameObject closestNode = null;
@@ -52,10 +55,10 @@ public class InteractingController : MonoBehaviour
 
 
     //Last object hit with raycast, alongside "objectHitLastCheck" for AttemptInteract() to use if the button is pressed
-    GameObject lastObjectHit; //Object that was last hit by raycast
-    bool objectHitLastCheck; //if an object was hit last time the raycast happened
-    float timeSinceLastRaycastHit = 0; //Alternative that might be used to object hit last raycast check,
-                                       //as it will allow a person to "grab" an object they just stopped touching
+    GameObject lastObjectHit = null; //Object that was last hit by raycast
+    bool objectHitLastCheck = false; //if an object was hit last time the raycast happened
+    float timeSinceLastRaycastHit = 10000; //Alternative that might be used to object hit last raycast check,
+                                           //as it will allow a person to "grab" an object they just stopped touching
 
     //Laser visual
     LaserScript laser;
@@ -115,9 +118,12 @@ public class InteractingController : MonoBehaviour
         {
 
             //Only care about what we hit if it is an 'interactable', but still need the raycast data if it hit something else
-            if (lastObjectHit.layer == LayerMask.NameToLayer("Interactable"))
+            if (lastObjectHit.layer == LayerMask.NameToLayer(interactableLayer))
             { 
                 lastObjectHit = hit.transform.gameObject;
+                Interactable interact = lastObjectHit.GetComponent<Interactable>();
+                interact.HoveredOver();
+
                 objectHitLastCheck = true;
                 timeSinceLastRaycastHit = 0;
             }
@@ -148,7 +154,7 @@ public class InteractingController : MonoBehaviour
     void RaycastWhenItemHeld()
     {
         RaycastHit hit;
-        if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, maxRaycastLength, LayerMask.GetMask("Interactable")))
+        if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, maxRaycastLength, LayerMask.GetMask(interactableLayer)))
         {
             /* 
              * Get point on ground of where turret currently is
@@ -161,7 +167,7 @@ public class InteractingController : MonoBehaviour
             Vector3 raycastpointtouselater = hit.point;
             float distance;
 
-            GameObject[] nodes = GameObject.FindGameObjectsWithTag("Node");
+            GameObject[] nodes = GameObject.FindGameObjectsWithTag(nodeTag);
             GameObject closest = GetClosestOpenNode(nodes, raycastpointtouselater, out distance);
 
             if (closest != null && nodeGrabDistance > distance)
@@ -221,7 +227,7 @@ public class InteractingController : MonoBehaviour
         if (maxTimeToGrab > timeSinceLastRaycastHit && !isObjectHeld)
         {
             //'grab' item
-            if (lastObjectHit.CompareTag("Turret"))
+            if (lastObjectHit.CompareTag(turretTag))
             {
                 Interactable turret = lastObjectHit.GetComponent<Interactable>();
                 if (turret.CanBeGrabbed())

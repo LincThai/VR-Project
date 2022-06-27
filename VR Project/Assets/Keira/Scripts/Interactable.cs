@@ -42,6 +42,11 @@ public class Interactable : MonoBehaviour
         return false;
     }
 
+    public void HoveredOver()
+    {
+
+    }
+
     //If the turret got dropped without a node to connect to
     public void Voided()
     {

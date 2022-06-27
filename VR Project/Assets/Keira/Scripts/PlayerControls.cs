@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerControls : MonoBehaviour
 {
 
+    //Obsolete but kept here incase no idea.
+
     public GameObject leftHandTransform;
     public GameObject rightHandTransform;
 

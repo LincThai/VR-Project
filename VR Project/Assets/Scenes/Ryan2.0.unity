@@ -423,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theManager: {fileID: 1601963244}
   projectileSpeed: 0.2
-  range: 120
+  range: 110
   delay: 10
   arcOffset: 200
   projectile: {fileID: 2002128067967146123, guid: 1c5ea2e27bb1594459661580f8233f03, type: 3}

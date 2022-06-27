@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Finish"))
         {
             spawnManager.RemoveFromEnemies(gameObject);
+            spawnManager.DecrementEnemyCount();
             Destroy(gameObject);
         }
     }

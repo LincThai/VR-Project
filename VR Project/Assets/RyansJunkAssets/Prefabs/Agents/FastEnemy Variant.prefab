@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5c68c8f49bc24b646ab7390ad844ea65, type: 2}
     - target: {fileID: 6299183548690327858, guid: 8edfdf83d762d7b4ca1ed0cae0f179df, type: 3}
       propertyPath: m_Speed
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8392889474210624334, guid: 8edfdf83d762d7b4ca1ed0cae0f179df, type: 3}
       propertyPath: m_RootOrder

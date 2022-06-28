@@ -13,7 +13,7 @@ public class Node : MonoBehaviour
     public Color locked = Color.red;
 
     public bool nodeAvailable = true;
-    bool nodeTaken = false;
+    public bool nodeTaken = false;
 
 
 
@@ -21,14 +21,8 @@ public class Node : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
- 
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         SetColour(selected);
+
     }
 
     public void SetColour (Color colour)
@@ -37,5 +31,9 @@ public class Node : MonoBehaviour
         
         renderer.material.SetColor("Colour", colour);
     }
+
+
+
+    
 
 }

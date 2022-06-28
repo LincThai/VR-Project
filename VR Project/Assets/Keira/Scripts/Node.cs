@@ -13,10 +13,6 @@ public class Node : MonoBehaviour
     public Color locked = Color.red;
 
     public bool nodeAvailable = true;
-    public bool nodeTaken = false;
-
-
-
 
     // Start is called before the first frame update
     void Start()

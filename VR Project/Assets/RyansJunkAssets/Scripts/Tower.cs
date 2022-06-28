@@ -5,14 +5,17 @@ using UnityEngine.AI;
 
 public class Tower : MonoBehaviour
 {
-    public GameObject theManager; // Being set in inspector for now but should be done in code later by whatever is used to make the towers
-    SpawnManager spawnManager;
+    public SpawnManager spawnManager;
 
     [Header("Tower Variables")]
     [Tooltip("How much the turret costs")]
     public int cost = 1;
+    [Tooltip("The percentage you are refunded")]
+    public float refundPercent = 0.5f;
     [Tooltip("How long a tower range indicator will remain visible for after being hovered over")]
     public float rangeDisplayTimeLength = 5.0f;
+    [Tooltip("Put in prefab of this turrets desired type")]
+    public GameObject towerPrefab;
 
     GameObject rangeIndicator;
 
@@ -37,15 +40,18 @@ public class Tower : MonoBehaviour
 
     BoxCollider boxCollider;
 
+    Vector3 startPosition;
+
     float time = 0.0f;
     float rangeDisplayTimer = 0.0f;
     bool readyToShoot = true;
     bool active = false;
+    bool used = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnManager = theManager.GetComponent<SpawnManager>();
+        startPosition = transform.position;
 
         boxCollider = GetComponent<BoxCollider>();
 
@@ -135,5 +141,20 @@ public class Tower : MonoBehaviour
     public void ResetRangeDisplayTimer()
     {
         rangeDisplayTimer = rangeDisplayTimeLength;
+    }
+
+    public Vector3 GetStartingPosition()
+    {
+        return startPosition;
+    }
+
+    public bool isUsed()
+    {
+        return used;
+    }
+
+    public void setAsUsed()
+    {
+        used = true;
     }
 }

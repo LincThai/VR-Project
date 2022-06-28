@@ -216,7 +216,7 @@ Transform:
   m_LocalScale: {x: 50, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &94558269
 GameObject:
@@ -587,9 +587,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d210e0fa7894f4abdc49d281e94100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theManager: {fileID: 1601963244}
+  spawnManager: {fileID: 1601963245}
   cost: 1
-  rangeIndicator: {fileID: 0}
+  rangeDisplayTimeLength: 5
+  towerPrefab: {fileID: 0}
   projectileSpeed: 0.2
   range: 50
   delay: 10
@@ -1163,7 +1164,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &899054640
 Transform:
@@ -1965,7 +1966,7 @@ Transform:
   m_LocalScale: {x: 50, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1499111500
 GameObject:

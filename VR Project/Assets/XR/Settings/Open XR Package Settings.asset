@@ -19,11 +19,11 @@ MonoBehaviour:
   - {fileID: -824208340856130064}
   - {fileID: -7263619781194906150}
   - {fileID: -4230180522029045523}
-  - {fileID: -3413159043939207188}
-  - {fileID: -4802672632719110587}
-  - {fileID: 4131091564653278244}
   - {fileID: -1462973001799810732}
+  - {fileID: 4131091564653278244}
+  - {fileID: -3413159043939207188}
   - {fileID: 6711169591766551970}
+  - {fileID: -4802672632719110587}
   m_renderMode: 1
   m_depthSubmissionMode: 0
 --- !u!114 &-7263619781194906150
@@ -198,9 +198,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0ebc320a151d3408ea1e9fce54d40e, type: 3}
   m_Name: Open XR Package Settings
   m_EditorClassIdentifier: 
-  Keys: 01000000
+  Keys: 0100000007000000
   Values:
   - {fileID: -7460715358211938188}
+  - {fileID: 1777086041852576517}
+--- !u!114 &1777086041852576517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a1f07dc5afe854f9f12a4194aca3fb, type: 3}
+  m_Name: Android
+  m_EditorClassIdentifier: 
+  features: []
+  m_renderMode: 1
+  m_depthSubmissionMode: 0
 --- !u!114 &4131091564653278244
 MonoBehaviour:
   m_ObjectHideFlags: 0

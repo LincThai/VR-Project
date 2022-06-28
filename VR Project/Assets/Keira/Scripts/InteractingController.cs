@@ -28,10 +28,6 @@ public class InteractingController : MonoBehaviour
 
     [Header("Scene objects to set")]
 
-    [Tooltip("Left Hand Controller")]
-    public Controller leftHand;
-    [Tooltip("Right Hand Controller")]
-    public Controller rightHand;
     [Tooltip("The sphere childed to this hand")]
     public GameObject ballChild;
     [Tooltip("Temp node I am using to see position of certain things")]
@@ -72,40 +68,21 @@ public class InteractingController : MonoBehaviour
         //Get ball renderer on this object
         ballRenderer = ballChild.GetComponent<MeshRenderer>();
         ballRenderer.enabled = false;
-        
-
-        //gets left controller
-        List<InputDevice> inputDeviceLeft = new List<InputDevice>();
-        InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Controller, inputDeviceLeft);
-        leftHand.device = inputDeviceLeft[0];
-        //gets right controller
-        List<InputDevice> inputDeviceRight = new List<InputDevice>();
-        InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller, inputDeviceRight);
-        rightHand.device = inputDeviceRight[0];
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (!isObjectHeld)
         {
             //raycast to do when no item is held
-            GeneralRaycast();
-            
+            GeneralRaycast();   
         }
         else
         {
             //What do to when an item is held
             RaycastWhenItemHeld();
-
-            
-        }
-
-
-        
-        
+        }   
     }
 
     void GeneralRaycast ()
@@ -132,7 +109,6 @@ public class InteractingController : MonoBehaviour
                 objectHitLastCheck = false;
                 timeSinceLastRaycastHit += Time.deltaTime;
             }
-
 
             ballRenderer.enabled = true;
             laser.SetLaserDistFromHand(hit.distance);
@@ -268,58 +244,9 @@ public class InteractingController : MonoBehaviour
         }
     }
 
-    Vector2 GetAxisPos2D(Controller controller)
-    {
-        Vector2 axisPos2D = Vector2.zero;
-
-        controller.device.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisPos2D);
-
-        return axisPos2D;
-    }
-
-    float GetAxisPosX(Controller controller)
-    {
-        Vector2 axis2D = GetAxisPos2D(controller);
-        Vector2 axis2DAbs = new Vector2(Mathf.Abs(axis2D.x), Mathf.Abs(axis2D.y));
-
-
-        if (axis2DAbs.x <= axis2DAbs.y)
-        {
-            return 0;
-        } else
-        {
-            return axis2D.x;
-        }
-    }
-
-    public void tempOnTouch()
-    {
-        Vector2 Axis2D = GetAxisPos2D(leftHand);
-        Vector3 Axis3D = new Vector3(Axis2D.x, 0, Axis2D.y);
-        node.transform.position = leftHand.transform.position + (Axis3D * 10);
-    }
-
-    //Moves the "interact" ball forwards and backwards for max 'reach'
-    public void OnAxis2DTouch()
-    {
-        //probably not going to be used       
-
-        //if (objectGrabbed)
-        //{
-        //    float axisX = GetAxisPosX(leftHand);
-
-        //    interactBallDistFromHand = Mathf.Clamp(axisX * moveSpeed * Time.deltaTime, minDistFromHand, maxRaycastLength);
-
-        //    SetInteractBallDist(interactBallDistFromHand);
-        //}
-    }
-
-
     void SetInteractBallDist(float distance)
     {
         ballChild.transform.position = this.transform.position + this.transform.forward * distance;
-
-        //also needs to set pos of object held
     }
 
     //Currently does nothing until I fix this up :(
@@ -330,10 +257,4 @@ public class InteractingController : MonoBehaviour
     }
 }
 
-public class Controller
-{
-    [SerializeField]
-    public InputDevice device;
-    public Transform transform;
-}
 

@@ -50,7 +50,7 @@ public class Interactable : MonoBehaviour
 
     public void HoveredOver()
     {
-
+        tower.ResetRangeDisplayTimer();
     }
 
     //If the turret got dropped without a node to connect to
@@ -62,7 +62,7 @@ public class Interactable : MonoBehaviour
     //If the turret is dropped onto a node.
     public void SetToNode(GameObject Node)
     {
-
+        tower.ActivateTower();
     }
 
 }

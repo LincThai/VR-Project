@@ -8,9 +8,14 @@ public class Tower : MonoBehaviour
     public GameObject theManager; // Being set in inspector for now but should be done in code later by whatever is used to make the towers
     SpawnManager spawnManager;
 
-    [Header("Placement Variables")]
+    [Header("Tower Variables")]
     [Tooltip("How much the turret costs")]
     public int cost = 1;
+    [Tooltip("How long a tower range indicator will remain visible for after being hovered over")]
+    public float rangeDisplayTimeLength = 5.0f;
+
+    GameObject rangeIndicator;
+
 
     [Header("Shooting Variables")]
     [Tooltip("Speed in which the projectile will fly at. 0.0 - 1.0")]
@@ -33,7 +38,9 @@ public class Tower : MonoBehaviour
     BoxCollider boxCollider;
 
     float time = 0.0f;
+    float rangeDisplayTimer = 0.0f;
     bool readyToShoot = true;
+    bool active = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,45 +48,68 @@ public class Tower : MonoBehaviour
         spawnManager = theManager.GetComponent<SpawnManager>();
 
         boxCollider = GetComponent<BoxCollider>();
+
+        rangeIndicator = transform.GetChild(0).gameObject;
+
+        rangeIndicator.transform.localScale = new Vector3(range / transform.localScale.x * 2, range / transform.localScale.z * 2, 1.0f);
+
+        ResetRangeDisplayTimer();
+        rangeIndicator.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        if (!readyToShoot && time >= delay)
+        if (rangeDisplayTimer > 0.0f && !rangeIndicator.active)
         {
-            time = 0.0f;
-            readyToShoot = true;
+            rangeIndicator.SetActive(true);
+        }
+        else if (rangeDisplayTimer <= 0.0f && rangeIndicator.active)
+        {
+            rangeIndicator.SetActive(false);
+        }
+        else if (rangeDisplayTimer > 0.0f)
+        {
+            rangeDisplayTimer -= Time.deltaTime;
         }
 
-        if (readyToShoot)
+        if (active)
         {
-            if (spawnManager.enemyList.Count != 0)
+            time += Time.deltaTime;
+            if (!readyToShoot && time >= delay)
             {
-                GameObject target = null;
-                float distance = float.MaxValue;
-                foreach (GameObject enemy in spawnManager.enemyList)
+                time = 0.0f;
+                readyToShoot = true;
+            }
+
+            if (readyToShoot)
+            {
+                if (spawnManager.enemyList.Count != 0)
                 {
-                    float d = Vector3.Distance(transform.position, enemy.transform.position);
-                    if (d <= range && d < distance)
+                    GameObject target = null;
+                    float distance = float.MaxValue;
+                    foreach (GameObject enemy in spawnManager.enemyList)
                     {
-                        distance = d;
-                        target = enemy;
+                        float d = Vector3.Distance(transform.position, enemy.transform.position);
+                        if (d <= range && d < distance)
+                        {
+                            distance = d;
+                            target = enemy;
+                        }
                     }
-                }
-                if (target != null)
-                {
-                    Vector3 predictedPosition = target.transform.position + (target.GetComponent<NavMeshAgent>().velocity * target.GetComponent<NavMeshAgent>().speed);
+                    if (target != null)
+                    {
+                        Vector3 predictedPosition = target.transform.position + (target.GetComponent<NavMeshAgent>().velocity * target.GetComponent<NavMeshAgent>().speed);
 
-                    GameObject p = Instantiate(projectile, new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), transform.rotation);
+                        GameObject p = Instantiate(projectile, new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), transform.rotation);
 
-                    p.GetComponent<Projectile>().SetProjectileValues(new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), predictedPosition, arcOffset, 0.2f);
-                    p.GetComponent<Projectile>().SetSpawnManager(spawnManager);
-                    p.GetComponent<Projectile>().SetBlastRadius(blastRadius);
-                    p.GetComponent<Projectile>().SetDamage(damage);
+                        p.GetComponent<Projectile>().SetProjectileValues(new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), predictedPosition, arcOffset, 0.2f);
+                        p.GetComponent<Projectile>().SetSpawnManager(spawnManager);
+                        p.GetComponent<Projectile>().SetBlastRadius(blastRadius);
+                        p.GetComponent<Projectile>().SetDamage(damage);
 
-                    readyToShoot = false;
+                        readyToShoot = false;
+                    }
                 }
             }
         }
@@ -90,5 +120,20 @@ public class Tower : MonoBehaviour
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public void ActivateTower()
+    {
+        active = true;
+    }
+
+    public void DeactivateTower()
+    {
+        active = false;
+    }
+
+    public void ResetRangeDisplayTimer()
+    {
+        rangeDisplayTimer = rangeDisplayTimeLength;
     }
 }

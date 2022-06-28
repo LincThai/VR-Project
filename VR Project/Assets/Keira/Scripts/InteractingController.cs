@@ -95,9 +95,10 @@ public class InteractingController : MonoBehaviour
         {
 
             //Only care about what we hit if it is an 'interactable', but still need the raycast data if it hit something else
-            if (lastObjectHit.layer == LayerMask.NameToLayer(interactableLayer))
+            GameObject objectHit = hit.transform.gameObject;
+            if (objectHit.layer == LayerMask.NameToLayer(interactableLayer))
             { 
-                lastObjectHit = hit.transform.gameObject;
+                lastObjectHit = objectHit;
                 Interactable interact = lastObjectHit.GetComponent<Interactable>();
                 interact.HoveredOver();
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    [Tooltip("Put in the start button")]
+    public GameObject startButton;
     [Tooltip("Put in the money manager")]
     public MoneyManager moneyManager;
     [Tooltip("Put in you spawners")]
@@ -24,7 +26,8 @@ public class SpawnManager : MonoBehaviour
     public int enemyCount = 0;
     public int spawnCount = 0;
 
-    bool newRound = true;
+    bool newRound = false;
+    bool gameStart = true;
 
     // Start is called before the first frame update
     void Start()
@@ -35,29 +38,15 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (newRound && spawnCount == enemySpawnTotal && enemyCount == 0)
+        if (gameStart == true)
         {
-            spawnCount = 0;
-            newRound = false;
-
-            enemySpawnTotal += (int)(enemySpawnTotal * enemySpawnTotalScale);
-
-            if (specialUnitChance + specialUnitChanceIncrease > maxSpecialUnitChance)
-            {
-                
-            }
-            else if (specialUnitChance != maxSpecialUnitChance && specialUnitChance + specialUnitChanceIncrease > maxSpecialUnitChance)
-            {
-                specialUnitChance = maxSpecialUnitChance;
-            }
-            else
-            {
-                specialUnitChance += specialUnitChanceIncrease;
-            }
+            startButton.SetActive(true);
+            gameStart = false;
         }
-        else if (newRound != true && enemyCount == 0)
+        else if (newRound && spawnCount == enemySpawnTotal && enemyCount == 0)
         {
-            newRound = true;
+            newRound = false;
+            startButton.SetActive(true);
         }
     }
 
@@ -90,5 +79,26 @@ public class SpawnManager : MonoBehaviour
     public void RemoveFromEnemies(GameObject enemy)
     {
         enemyList.Remove(enemy);
+    }
+
+    public void NewRound()
+    {
+        spawnCount = 0;
+        newRound = true;
+
+        enemySpawnTotal += (int)(enemySpawnTotal * enemySpawnTotalScale);
+
+        if (specialUnitChance + specialUnitChanceIncrease > maxSpecialUnitChance)
+        {
+
+        }
+        else if (specialUnitChance != maxSpecialUnitChance && specialUnitChance + specialUnitChanceIncrease > maxSpecialUnitChance)
+        {
+            specialUnitChance = maxSpecialUnitChance;
+        }
+        else
+        {
+            specialUnitChance += specialUnitChanceIncrease;
+        }
     }
 }

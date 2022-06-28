@@ -8,6 +8,10 @@ public class Tower : MonoBehaviour
     public GameObject theManager; // Being set in inspector for now but should be done in code later by whatever is used to make the towers
     SpawnManager spawnManager;
 
+    [Header("Placement Variables")]
+    [Tooltip("How much the turret costs")]
+    public int cost = 1;
+
     [Header("Shooting Variables")]
     [Tooltip("Speed in which the projectile will fly at. 0.0 - 1.0")]
     public float projectileSpeed;

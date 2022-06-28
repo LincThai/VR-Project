@@ -7,10 +7,9 @@ TagManager:
   - Enemy
   - Tower
   - Projectile
-  tags:
-  - Turret
-  - UI
+  - Undefined
   - Node
+  - Turret
   layers:
   - Default
   - TransparentFX

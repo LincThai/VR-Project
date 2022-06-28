@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MoneyManager : MonoBehaviour
 {
-    public int gold;
+    int gold;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +16,29 @@ public class MoneyManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public int GetGold()
+    {
+        return gold;
+    }
+
+    // Returns true and subtracts cost from gold if you have enough gold or just returns false if you don't have enough
+    public bool SpendGold(int cost)
+    {
+        if (gold >= cost)
+        {
+            gold -= cost;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void AddGold(int gold)
+    {
+        gold += gold;
     }
 }

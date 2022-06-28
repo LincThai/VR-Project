@@ -28,12 +28,12 @@ public class InteractingController : MonoBehaviour
 
     [Header("Scene objects to set")]
 
+    [Tooltip("Add the money manager")]
+    public MoneyManager moneyManager;
     [Tooltip("The sphere childed to this hand")]
     public GameObject ballChild;
     [Tooltip("Temp node I am using to see position of certain things")]
     public GameObject node;
-
-
 
     //ball thing - dumb ball renderer wont let me turn it off :(
     MeshRenderer ballRenderer;
@@ -206,7 +206,7 @@ public class InteractingController : MonoBehaviour
             if (lastObjectHit.CompareTag(turretTag))
             {
                 Interactable turret = lastObjectHit.GetComponent<Interactable>();
-                if (turret.CanBeGrabbed())
+                if (turret.CanBeGrabbed(moneyManager))
                 {
                     isObjectHeld = true;
                     objectBeingHeld = lastObjectHit;
@@ -238,7 +238,7 @@ public class InteractingController : MonoBehaviour
             }
             else
             {
-                turret.Voided();
+                turret.Voided(moneyManager);
             }
 
         }

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerControls : MonoBehaviour
 {
+
+    //Obsolete but kept here incase no idea.
 
     public GameObject leftHandTransform;
     public GameObject rightHandTransform;
@@ -12,32 +15,32 @@ public class PlayerControls : MonoBehaviour
 
     Controls controls;
 
+    Gamepad gamepad;
+
     // Start is called before the first frame update
     void Start()
     {
-        controls = new Controls();
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool triggerValueLeft = false;
-        if (controls.leftHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValueLeft) && triggerValueLeft)
-        {
-            Debug.Log("Trigger on left pressed");
-            node.transform.position = leftHandTransform.transform.position;
-        }
-        bool triggerValueRight = false;
-        if (controls.leftHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValueRight) && triggerValueRight)
-        {
-            Debug.Log("Trigger on right pressed");
-            node.transform.position = rightHandTransform.transform.position;
-        }
+
+        
+        
+    }
+
+    public void PlsWork()
+    {
+        node.transform.position = leftHandTransform.transform.position + leftHandTransform.transform.forward * 10;
+        
     }
 
 }
+
+
 class Controls
 {
     public UnityEngine.XR.InputDevice leftHand;

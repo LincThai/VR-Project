@@ -503,6 +503,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Trigger Release",
+                    "type": "Button",
+                    "id": "656ee735-e2ae-48fb-a93d-cd72e25d2f87",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Primary Button",
                     "type": "Button",
                     "id": "f21a59fc-ba2d-43ac-9051-f61598c360bd",
@@ -785,28 +794,6 @@
                 },
                 {
                     "name": "",
-                    "id": "aac14b93-d556-4433-8893-0eeafd6190f8",
-                    "path": "<Keyboard>/g",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Grip",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c7c796b4-85a2-47fd-bc9e-ae4d4bfd3640",
-                    "path": "<XRController>{LeftHand}/gripButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Grip",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "bc242731-d17f-4b22-aa06-3988e7cffc87",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -934,6 +921,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Secondary Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aac14b93-d556-4433-8893-0eeafd6190f8",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c7c796b4-85a2-47fd-bc9e-ae4d4bfd3640",
+                    "path": "<XRController>{LeftHand}/gripButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "31950e43-5dc0-48ef-81d1-f417e94deb0c",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trigger Release",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

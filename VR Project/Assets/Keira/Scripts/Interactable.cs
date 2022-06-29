@@ -42,6 +42,7 @@ public class Interactable : MonoBehaviour
     {
         if (interactableType == InteractableType.Turret)
         {
+            Debug.Log("Tower Cost: " + tower.cost + " gold available: " + mManager.GetGold());
             if (!tower.isUsed())
             {
                 if (mManager.SpendGold(tower.cost))
@@ -52,11 +53,11 @@ public class Interactable : MonoBehaviour
             else
             {
                 mManager.AddGold((int)(tower.cost * tower.refundPercent));
-                Destroy(gameObject);
                 if (node != null)
                 {
                     node.nodeAvailable = true;
                 }
+                Destroy(gameObject);
             }
             //check if player has enough coins to buy turret, if not return false, if they do, return true, turret is grabbed, and will be told it is "let go" of at somepoint soon
             //When let go
@@ -71,7 +72,10 @@ public class Interactable : MonoBehaviour
 
     public void HoveredOver()
     {
-        tower.ResetRangeDisplayTimer();
+        if (tower != null)
+        {
+            tower.ResetRangeDisplayTimer();
+        }
     }
 
     //If the turret got dropped without a node to connect to
@@ -88,6 +92,8 @@ public class Interactable : MonoBehaviour
     {
         tower.ActivateTower();
         tower.setAsUsed();
+        tower.transform.position = node.transform.position; 
+
 
         node = setNode.GetComponent<Node>();
         node.nodeAvailable = false;

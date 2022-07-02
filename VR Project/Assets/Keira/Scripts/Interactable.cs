@@ -91,10 +91,8 @@ public class Interactable : MonoBehaviour
     //If the turret is dropped onto a node.
     public void SetToNode(GameObject setNode)
     {
-        Debug.Log((setNode != null));
 
         node = setNode.GetComponent<Node>();
-        Debug.Log(node != null);
 
         tower.ActivateTower();
         tower.setAsUsed();

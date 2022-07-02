@@ -96,20 +96,17 @@ public class InteractingController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, maxRaycastLength))//, LayerMask.GetMask("Interactable")))
         {
-                
-            
-
             //Only care about what we hit if it is an 'interactable', but still need the raycast data if it hit something else
             GameObject objectHit = hit.transform.gameObject;
             if (objectHit.layer == LayerMask.NameToLayer(interactableLayer))
             { 
                 lastObjectHit = objectHit;
 
-
                 Interactable interact = lastObjectHit.GetComponentInParent<Interactable>();
 
                 if (interact != null)
                 {
+
                     interact.HoveredOver();
                     objectHitLastCheck = true;
                     timeSinceLastRaycastHit = 0;
@@ -236,6 +233,7 @@ public class InteractingController : MonoBehaviour
             //'grab' item
             if (lastObjectHit.CompareTag(turretTag))
             {
+                Debug.Log("Get 'Turret' from LastObjectHit (1)");
                 Interactable turret = lastObjectHit.GetComponentInParent<Interactable>();
                 
                  
@@ -243,9 +241,9 @@ public class InteractingController : MonoBehaviour
                 {
                     Debug.Log("Object could be grabbed!");
                     isObjectHeld = true;
-
-
                     objectBeingHeld = GetBaseParentOfTurret(lastObjectHit);
+
+
                 } else
                 {
                     Debug.Log("Object could not be grabbed :(");
@@ -278,6 +276,13 @@ public class InteractingController : MonoBehaviour
             Interactable turret = objectBeingHeld.GetComponentInParent<Interactable>();
             //tell closest node to take turret, tell turret it has been placed, if no closest node, tell turret it was dropped.
             //Turret or node need to set turrets position to the node.
+            if (turret == null)
+            {
+                Debug.LogWarning("Interact Script Not Found!!!");
+
+                return;
+            }
+
             if (isClosestNodeValid)
             {
                 turret.SetToNode(closestNode);
@@ -293,10 +298,24 @@ public class InteractingController : MonoBehaviour
 
     GameObject GetBaseParentOfTurret(GameObject turret)
     {
-        GameObject higherParent = turret.transform.parent.gameObject;
+        if (!turret.CompareTag(turretTag))
+        {
+            Debug.LogWarning("Wrong Object passed into function 'GetBaseParentOfTurret(GameObject Turret)' pls fix");
+            return turret;
+        }
         GameObject highestWithTag = turret;
+
+        GameObject higherParent = null;
+
+        if (turret.transform.parent == null)
+        {
+            return highestWithTag;
+        } else
+        {
+            higherParent = turret.transform.parent.gameObject;
+        }
         
-        while (higherParent.CompareTag(turretTag))
+        while (higherParent.CompareTag(turretTag) && higherParent.transform.parent != null)
         {
             highestWithTag = higherParent;
             higherParent = higherParent.transform.parent.gameObject;

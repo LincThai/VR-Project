@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3069028181445791232}
   - component: {fileID: 3069028181445791233}
   - component: {fileID: 3069028181445791245}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Turret Node
   m_TagString: Node
   m_Icon: {fileID: 0}
@@ -111,4 +111,3 @@ MonoBehaviour:
   available: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   selected: {r: 0, g: 1, b: 0, a: 1}
   locked: {r: 1, g: 0, b: 0, a: 1}
-  nodeAvailable: 1

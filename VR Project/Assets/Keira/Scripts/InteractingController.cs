@@ -160,6 +160,7 @@ public class InteractingController : MonoBehaviour
             if (!nodeListUpdated)
             {
                 nodeListUpdated = true;
+                
                 nodeList = GameObject.FindGameObjectsWithTag(nodeTag);
             }
             GameObject closest = GetClosestOpenNode(nodeList, hit.point, out distance);
@@ -202,7 +203,7 @@ public class InteractingController : MonoBehaviour
 
         for (int i = 0; i < nodes.Length; i++)
         {
-            if (nodes[i].GetComponent<Node>().nodeAvailable)
+            if (nodes[i].GetComponent<Node>().IsNodeAvailable())
             {
                 float distance = Vector3.Distance(nodes[i].transform.position, position);
                 if (closestDist > distance)
@@ -303,12 +304,13 @@ public class InteractingController : MonoBehaviour
             Debug.LogWarning("Wrong Object passed into function 'GetBaseParentOfTurret(GameObject Turret)' pls fix");
             return turret;
         }
-        GameObject highestWithTag = turret;
 
+        GameObject highestWithTag = turret;
         GameObject higherParent = null;
 
         if (turret.transform.parent == null)
         {
+            Debug.Log("Early exit from 'GetBaseParentOfTurret'");
             return highestWithTag;
         } else
         {
@@ -319,6 +321,12 @@ public class InteractingController : MonoBehaviour
         {
             highestWithTag = higherParent;
             higherParent = higherParent.transform.parent.gameObject;
+        }
+        //not sure of a way I can incoperate the last part of this into the while loop
+        //It leaves the loop early due to the null check, but the check is required
+        if (higherParent.CompareTag(turretTag))
+        {
+            highestWithTag = higherParent;
         }
 
         return highestWithTag;

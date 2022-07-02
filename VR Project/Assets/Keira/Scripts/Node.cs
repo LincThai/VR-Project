@@ -12,13 +12,15 @@ public class Node : MonoBehaviour
     [Tooltip("Node is unavailable")]
     public Color locked = Color.red;
 
-    public bool nodeAvailable = true;
+    bool nodeAvailable = true;
+
+    MeshRenderer renderer = null;
 
     // Start is called before the first frame update
     void Start()
     {
         SetColour(selected);
-
+        renderer = GetComponent<MeshRenderer>();
     }
 
     public void SetColour (Color colour)
@@ -28,8 +30,24 @@ public class Node : MonoBehaviour
         renderer.material.SetColor("Colour", colour);
     }
 
+    public bool IsNodeAvailable()
+    {
+        return nodeAvailable;
+    }
+
+    public void SetAvailable()
+    {
+        nodeAvailable = true;
+        renderer.enabled = true;
+    }
+
+    public void SetUnavailable()
+    {
+        nodeAvailable = false;
+        renderer.enabled = false;
+    }
 
 
-    
+
 
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 622302156525486736}
   - component: {fileID: 622302156525486739}
   - component: {fileID: 622302156525486738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RangeIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 622302156965692290}
   - component: {fileID: 622302156965692318}
   - component: {fileID: 5668232659956451979}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower
-  m_TagString: Tower
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

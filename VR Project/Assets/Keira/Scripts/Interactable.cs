@@ -53,6 +53,7 @@ public class Interactable : MonoBehaviour
             else
             {
                 mManager.AddGold((int)(tower.cost * tower.refundPercent));
+                Debug.Log("Tower Refunded");
                 if (node != null)
                 {
                     node.nodeAvailable = true;
@@ -90,12 +91,15 @@ public class Interactable : MonoBehaviour
     //If the turret is dropped onto a node.
     public void SetToNode(GameObject setNode)
     {
+        Debug.Log((setNode != null));
+
+        node = setNode.GetComponent<Node>();
+        Debug.Log(node != null);
+
         tower.ActivateTower();
         tower.setAsUsed();
         tower.transform.position = node.transform.position; 
 
-
-        node = setNode.GetComponent<Node>();
         node.nodeAvailable = false;
 
         RefreshTurret();

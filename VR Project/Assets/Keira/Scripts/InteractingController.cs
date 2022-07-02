@@ -171,6 +171,7 @@ public class InteractingController : MonoBehaviour
             {
                 //Sets turret to hover above node
                 SetHeldItemPosition(closest.transform.position + Vector3.up * turretHoverDistance);
+                closestNode = closest;
                 isClosestNodeValid = true;
             }
             else

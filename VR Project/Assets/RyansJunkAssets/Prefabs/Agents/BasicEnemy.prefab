@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  goldDrop: 1
 --- !u!65 &9045811429833908500
 BoxCollider:
   m_ObjectHideFlags: 0

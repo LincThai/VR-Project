@@ -84,6 +84,7 @@ public class Projectile : MonoBehaviour
                     {
                         spawnManager.DecrementEnemyCount();
                         spawnManager.RemoveFromEnemies(enemy);
+                        spawnManager.moneyManager.AddGold(enemy.GetComponent<Enemy>().goldDrop);
                         Destroy(enemy);
                     }
                 }

@@ -787,8 +787,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -13.375, y: 0.5, z: -0.5}
+      m_Extent: {x: 23.875, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1067,8 +1067,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -18.125, y: 0.5, z: -0.5}
+      m_Extent: {x: 19.125, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1231,8 +1231,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: -4}
+      m_Extent: {x: 0.5, y: 0.5, z: 24.75}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1827,8 +1827,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: -13.25}
+      m_Extent: {x: 0.5, y: 0.5, z: 34.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -2304,8 +2304,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -8.5, y: 0.5, z: -0.5}
+      m_Extent: {x: 29, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -2791,8 +2791,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -13.125, y: 0.5, z: -0.5}
+      m_Extent: {x: 4.375, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -3278,8 +3278,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -18.125, y: 0.5, z: -0.5}
+      m_Extent: {x: 19.125, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -4083,8 +4083,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: -13.375}
+      m_Extent: {x: 0.5, y: 0.5, z: 34.375}
   m_Shapes:
     vertices: []
     shapes: []
@@ -4414,8 +4414,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -8.25, y: 0.5, z: -0.5}
+      m_Extent: {x: 9.25, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -5071,8 +5071,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -18.125, y: 0.5, z: -0.5}
+      m_Extent: {x: 19.125, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -5548,8 +5548,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: 15.5}
+      m_Extent: {x: 0.5, y: 0.5, z: 15.25}
   m_Shapes:
     vertices: []
     shapes: []
@@ -5712,8 +5712,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: 10.5}
+      m_Extent: {x: 0.5, y: 0.5, z: 10.25}
   m_Shapes:
     vertices: []
     shapes: []
@@ -5876,8 +5876,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: 4.75}
+      m_Extent: {x: 0.5, y: 0.5, z: 6}
   m_Shapes:
     vertices: []
     shapes: []
@@ -6023,6 +6023,30 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &506519551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6075298702933531674, guid: 6962e5d06445384429cd6368443fc342, type: 3}
+  m_PrefabInstance: {fileID: 2017469094039797897}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &506519553
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506519551}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f61d8c3b612c99347ba03e15b0f2ec96, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &522062092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7401,8 +7425,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -8.375, y: 0.5, z: -0.5}
+      m_Extent: {x: 28.875, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -7679,8 +7703,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: -3.625}
+      m_Extent: {x: 0.5, y: 0.5, z: 44.125}
   m_Shapes:
     vertices: []
     shapes: []
@@ -7843,8 +7867,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -18.125, y: 0.5, z: -0.5}
+      m_Extent: {x: 19.125, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -8107,8 +8131,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: 10.5}
+      m_Extent: {x: 0.5, y: 0.5, z: 10.25}
   m_Shapes:
     vertices: []
     shapes: []
@@ -10264,8 +10288,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: 0.75}
+      m_Extent: {x: 0.5, y: 0.5, z: 19.75}
   m_Shapes:
     vertices: []
     shapes: []
@@ -10940,8 +10964,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 1.5, y: 0.5, z: -0.5}
+      m_Extent: {x: 38.75, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -11931,8 +11955,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: -8.5}
+      m_Extent: {x: 0.5, y: 0.5, z: 29.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -12100,8 +12124,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -8.25, y: 0.5, z: -0.5}
+      m_Extent: {x: 9.25, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -13075,8 +13099,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -3.5, y: 0.5, z: -0.5}
+      m_Extent: {x: 33.75, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -13239,8 +13263,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: 15.5}
+      m_Extent: {x: 0.5, y: 0.5, z: 15.25}
   m_Shapes:
     vertices: []
     shapes: []
@@ -13716,8 +13740,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: 1.125}
+      m_Extent: {x: 0.5, y: 0.5, z: 19.875}
   m_Shapes:
     vertices: []
     shapes: []
@@ -14022,8 +14046,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -18.125, y: 0.5, z: -0.5}
+      m_Extent: {x: 19.125, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -14283,8 +14307,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: -3.875}
+      m_Extent: {x: 0.5, y: 0.5, z: 44.125}
   m_Shapes:
     vertices: []
     shapes: []
@@ -14587,8 +14611,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -23, y: 0.5, z: -0.5}
+      m_Extent: {x: 14.25, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -15439,8 +15463,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: 9.875}
+      m_Extent: {x: 0.5, y: 0.5, z: 10.875}
   m_Shapes:
     vertices: []
     shapes: []
@@ -15921,8 +15945,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: 0.625}
+      m_Extent: {x: 0.5, y: 0.5, z: 19.875}
   m_Shapes:
     vertices: []
     shapes: []
@@ -18442,8 +18466,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: 10.375}
+      m_Extent: {x: 0.5, y: 0.5, z: 10.125}
   m_Shapes:
     vertices: []
     shapes: []
@@ -18919,8 +18943,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -18.125, y: 0.5, z: -0.5}
+      m_Extent: {x: 19.125, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -19083,8 +19107,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -13.125, y: 0.5, z: -0.5}
+      m_Extent: {x: 4.375, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -19873,8 +19897,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: 10.5}
+      m_Extent: {x: 0.5, y: 0.5, z: 10.25}
   m_Shapes:
     vertices: []
     shapes: []
@@ -20094,8 +20118,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: -18.125, y: 0.5, z: -0.5}
+      m_Extent: {x: 19.125, y: 0.5, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -20263,8 +20287,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.5, y: 0.5, z: 0.875}
+      m_Extent: {x: 0.5, y: 0.5, z: 19.875}
   m_Shapes:
     vertices: []
     shapes: []
@@ -20436,18 +20460,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2352610492109321954, guid: 6962e5d06445384429cd6368443fc342, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2352610492109321954, guid: 6962e5d06445384429cd6368443fc342, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2352610492109321954, guid: 6962e5d06445384429cd6368443fc342, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2352610492109321954, guid: 6962e5d06445384429cd6368443fc342, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9
       objectReference: {fileID: 0}
@@ -20500,38 +20512,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b6651fc55b1d41f4ea11a48a355666b5, type: 2}
-    - target: {fileID: 5126875501738992362, guid: 67f0ba3fd80a7694cad90c7967d58619, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126875501738992362, guid: 67f0ba3fd80a7694cad90c7967d58619, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126875501738992362, guid: 67f0ba3fd80a7694cad90c7967d58619, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126875501738992362, guid: 67f0ba3fd80a7694cad90c7967d58619, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126875501738992362, guid: 67f0ba3fd80a7694cad90c7967d58619, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126875501738992362, guid: 67f0ba3fd80a7694cad90c7967d58619, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126875501738992362, guid: 67f0ba3fd80a7694cad90c7967d58619, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126875501738992362, guid: 67f0ba3fd80a7694cad90c7967d58619, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7366033886676806518, guid: 67f0ba3fd80a7694cad90c7967d58619, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -20592,18 +20572,6 @@ PrefabInstance:
     - target: {fileID: 4040600576961007728, guid: 004b0977ed848714791eff1dfddee507, type: 3}
       propertyPath: m_Name
       value: SpeedTypeEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6735642500249987509, guid: 004b0977ed848714791eff1dfddee507, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6735642500249987509, guid: 004b0977ed848714791eff1dfddee507, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6735642500249987509, guid: 004b0977ed848714791eff1dfddee507, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8678932090514672562, guid: 004b0977ed848714791eff1dfddee507, type: 3}
       propertyPath: m_RootOrder

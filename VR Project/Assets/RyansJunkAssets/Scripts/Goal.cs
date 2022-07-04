@@ -9,6 +9,10 @@ public class Goal : MonoBehaviour
     public GameObject theManager;
     SpawnManager spawnManager;
 
+    [Header("Goal Variables")]
+    [Tooltip("Players bases' health.")]
+    int health;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,7 @@ public class Goal : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             spawnManager.DecrementEnemyCount();
+            health -= collision.gameObject.GetComponent<Enemy>().damage;
         }
     }
 }

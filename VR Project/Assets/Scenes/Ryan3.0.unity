@@ -17826,6 +17826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 1000
+  goldDisplay: {fileID: 0}
 --- !u!4 &1892183138
 Transform:
   m_ObjectHideFlags: 0

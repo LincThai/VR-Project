@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7648882767741047261}
   - component: {fileID: 1257337991055452225}
   - component: {fileID: 7447354473450452320}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SpeedTypeEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,14 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4040600576961007728}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6735642500249987509}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!195 &8982664101964478173
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -45,7 +45,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4040600576961007728}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1.8
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -94,9 +94,9 @@ BoxCollider:
   m_GameObject: {fileID: 4040600576961007728}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 4, z: 4}
+  m_Size: {x: 3, y: 3.5, z: 3.5}
   m_Center: {x: 0, y: 2, z: 0}
 --- !u!54 &7447354473450452320
 Rigidbody:
@@ -184,9 +184,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6935687079284805244, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6089751823619000223, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4913296440103987566, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
       propertyPath: m_Name
       value: Dapperfly
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554941377726143898, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631134136168204362, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132702775996101245, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386328558110383560, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}

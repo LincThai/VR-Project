@@ -58,7 +58,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Tower"))
+        if (!collision.gameObject.CompareTag("Turret"))
         {
             if (spawnManager.enemyList.Count != 0)
             {

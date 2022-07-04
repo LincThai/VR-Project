@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 3109470833103516497}
   - component: {fileID: 1447608645441040102}
   - component: {fileID: 4504042214445459005}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TankTypeEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 613750063303718413}
   - component: {fileID: 1827111227995486637}
   - component: {fileID: 1598816833360922789}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

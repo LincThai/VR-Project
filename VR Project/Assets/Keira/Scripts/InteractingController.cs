@@ -20,13 +20,13 @@ public class InteractingController : MonoBehaviour
 
     [Header("Tag and Layer names")]
     [Tooltip("Tag name of Nodes")]
-    string nodeTag = "Node";
+    public string nodeTag = "Node";
     [Tooltip("Tag name of Turrets")]
-    string turretTag = "Turret";
+    public string turretTag = "Turret";
     [Tooltip("Tag name of UI")]
-    string uiTag = "UI";
+    public string uiTag = "UI";
     [Tooltip("Layer name of Interactables")]
-    string interactableLayer = "Interactable";
+    public string interactableLayer = "Interactable";
 
     [Header("Scene objects to set")]
 

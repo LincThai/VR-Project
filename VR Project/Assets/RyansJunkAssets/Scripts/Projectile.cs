@@ -58,7 +58,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Tower"))
+        if (!collision.gameObject.CompareTag("Turret") && !collision.gameObject.CompareTag("Node"))
         {
             if (spawnManager.enemyList.Count != 0)
             {
@@ -78,7 +78,7 @@ public class Projectile : MonoBehaviour
                         }
                     }
                 }
-                else
+                else if (collision.gameObject.CompareTag("Enemy"))
                 {
                     enemyStats = collision.gameObject.GetComponent<Enemy>();
                     enemyStats.health -= damage;

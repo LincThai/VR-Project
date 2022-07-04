@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 1
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.33333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 29a59a5f2ba703541802b293c202fbba, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c91a0b707dee160459e4c3851f0704da, type: 2}
 --- !u!1 &169404
 GameObject:
   m_ObjectHideFlags: 0
@@ -4047,7 +4047,6 @@ GameObject:
   - component: {fileID: 348289303}
   - component: {fileID: 348289302}
   - component: {fileID: 348289301}
-  - component: {fileID: 348289300}
   - component: {fileID: 348289299}
   m_Layer: 0
   m_Name: Spawner
@@ -4072,23 +4071,10 @@ MonoBehaviour:
   spawnRadius: 0
   spawnInterval: 0
   enemyPrefabs:
-  - {fileID: 8744963351797770359, guid: 8edfdf83d762d7b4ca1ed0cae0f179df, type: 3}
-  - {fileID: 3207406543859946223, guid: 4603045ba0872cd4e91c8e1acdbad10f, type: 3}
-  - {fileID: 6608990361164066334, guid: bc3a9f93695440b418c2e90695268d44, type: 3}
+  - {fileID: 749572401726439302, guid: 6962e5d06445384429cd6368443fc342, type: 3}
+  - {fileID: 4040600576961007728, guid: 004b0977ed848714791eff1dfddee507, type: 3}
+  - {fileID: 8205314742622364365, guid: 67f0ba3fd80a7694cad90c7967d58619, type: 3}
   goal: {fileID: 1011151190}
---- !u!135 &348289300
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348289298}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &348289301
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20129,6 +20115,10 @@ PrefabInstance:
       propertyPath: moneyManager
       value: 
       objectReference: {fileID: 1156217905}
+    - target: {fileID: 4279897854985628731, guid: 919e3ed9489e0fb4c8c12d774e7834e6, type: 3}
+      propertyPath: maxRaycastLength
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 4279897854985628731, guid: 919e3ed9489e0fb4c8c12d774e7834e6, type: 3}
       propertyPath: nodeGrabDistance
       value: 10

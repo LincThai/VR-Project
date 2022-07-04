@@ -29,6 +29,11 @@ public class Projectile : MonoBehaviour
     {
         flightPath = new BezierCurve(startPosition, new Vector3((startPosition.x + targetPosition.x) / 2, ((startPosition.y + targetPosition.y) / 2) + controlPointHeight, (startPosition.z + targetPosition.z) / 2), targetPosition);
         projectileSpeed = pSPeed;
+
+        if (targetPosition == new Vector3((startPosition.x + targetPosition.x) / 2, ((startPosition.y + targetPosition.y) / 2) + controlPointHeight, (startPosition.z + targetPosition.z) / 2)) // wouldn't be surprised if this is bad
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetSpawnManager(SpawnManager sManager)

@@ -59,7 +59,6 @@ public class Tower : MonoBehaviour
 
         rangeIndicator.transform.localScale = new Vector3(range / transform.localScale.x * 2, range / transform.localScale.z * 2, 1.0f);
 
-        ResetRangeDisplayTimer();
         rangeIndicator.SetActive(false);
     }
 

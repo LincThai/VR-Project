@@ -70,6 +70,7 @@ public class Interactable : MonoBehaviour
             if (uiFunction != null)
             {
                 uiFunction.Invoke();
+                
  
             }
             return false;

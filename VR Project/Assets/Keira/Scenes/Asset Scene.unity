@@ -152,7 +152,7 @@ MeshCollider:
   m_GameObject: {fileID: 169404}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -470,7 +470,7 @@ MeshCollider:
   m_GameObject: {fileID: 39103925}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -783,7 +783,7 @@ MeshCollider:
   m_GameObject: {fileID: 39810118}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -1096,7 +1096,7 @@ MeshCollider:
   m_GameObject: {fileID: 85132915}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -1409,7 +1409,7 @@ MeshCollider:
   m_GameObject: {fileID: 92325166}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -1699,7 +1699,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229802
+  m_Name: pb_Mesh252750
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1864,6 +1864,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (22)
@@ -1948,7 +1952,7 @@ MeshCollider:
   m_GameObject: {fileID: 165295875}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -2261,7 +2265,7 @@ MeshCollider:
   m_GameObject: {fileID: 174743203}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -2638,7 +2642,7 @@ RectTransform:
   m_Children:
   - {fileID: 872768067}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2651,7 +2655,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229738
+  m_Name: pb_Mesh252686
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2815,7 +2819,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229476
+  m_Name: pb_Mesh252436
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3002,7 +3006,7 @@ MeshCollider:
   m_GameObject: {fileID: 200018852}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -3293,6 +3297,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (6)
@@ -3355,6 +3363,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (3)
@@ -3550,7 +3562,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229946
+  m_Name: pb_Mesh252894
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3739,7 +3751,7 @@ Transform:
   - {fileID: 9360707}
   - {fileID: 1201582419}
   m_Father: {fileID: 1329358766}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &269469653
 PrefabInstance:
@@ -3748,6 +3760,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (1)
@@ -3812,7 +3828,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7dbc842b912628b459a3ba03ffce8d16, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7dbc842b912628b459a3ba03ffce8d16, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3866,7 +3882,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh228920
+  m_Name: pb_Mesh251876
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4115,6 +4131,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (16)
@@ -4203,12 +4223,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myManager: {fileID: 1935174273}
   spawnRadius: 0
-  spawnInterval: 0.4
+  spawnInterval: 1
   enemyPrefabs:
   - {fileID: 749572401726439302, guid: 6962e5d06445384429cd6368443fc342, type: 3}
   - {fileID: 4040600576961007728, guid: 004b0977ed848714791eff1dfddee507, type: 3}
   - {fileID: 8205314742622364365, guid: 67f0ba3fd80a7694cad90c7967d58619, type: 3}
-  goal: {fileID: 1011151190}
+  goal: {fileID: 832392854}
 --- !u!23 &348289301
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4371,7 +4391,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &380265610
 PrefabInstance:
@@ -4380,6 +4400,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (15)
@@ -4441,7 +4465,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh228982
+  m_Name: pb_Mesh251938
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4605,7 +4629,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229352
+  m_Name: pb_Mesh252308
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4792,7 +4816,7 @@ MeshCollider:
   m_GameObject: {fileID: 466175196}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -5171,7 +5195,7 @@ Transform:
   m_Children:
   - {fileID: 1830018443}
   m_Father: {fileID: 1329358766}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &513951961
 GameObject:
@@ -5202,7 +5226,7 @@ MeshCollider:
   m_GameObject: {fileID: 513951961}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -5515,7 +5539,7 @@ MeshCollider:
   m_GameObject: {fileID: 534870922}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -5806,6 +5830,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (14)
@@ -5867,7 +5895,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229282
+  m_Name: pb_Mesh252238
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6054,7 +6082,7 @@ MeshCollider:
   m_GameObject: {fileID: 573717428}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -6416,6 +6444,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (9)
@@ -6477,7 +6509,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229064
+  m_Name: pb_Mesh252020
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6641,7 +6673,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh228932
+  m_Name: pb_Mesh251888
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6805,7 +6837,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229252
+  m_Name: pb_Mesh252208
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6968,7 +7000,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1935174274}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5161f6f3652228444ab9000201598f24, type: 3}
       propertyPath: m_RootOrder
@@ -6992,7 +7024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5161f6f3652228444ab9000201598f24, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5161f6f3652228444ab9000201598f24, type: 3}
       propertyPath: m_LocalRotation.y
@@ -7000,7 +7032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5161f6f3652228444ab9000201598f24, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5161f6f3652228444ab9000201598f24, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7016,7 +7048,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5161f6f3652228444ab9000201598f24, type: 3}
       propertyPath: m_Name
-      value: Env_Mesh_MushroomBase_01
+      value: MushroomBase Goal
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5161f6f3652228444ab9000201598f24, type: 3}
+      propertyPath: m_TagString
+      value: Finish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5161f6f3652228444ab9000201598f24, type: 3}
@@ -7026,7 +7062,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229452
+  m_Name: pb_Mesh252412
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7191,6 +7227,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (21)
@@ -7275,7 +7315,7 @@ MeshCollider:
   m_GameObject: {fileID: 754345540}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -7565,7 +7605,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229856
+  m_Name: pb_Mesh252804
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7723,6 +7763,37 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &832392854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5161f6f3652228444ab9000201598f24, type: 3}
+  m_PrefabInstance: {fileID: 640685021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &832392858
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832392854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 5, z: 10}
+  m_Center: {x: -0.14633179, y: 2.35, z: 1.6}
+--- !u!114 &832392859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832392854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd590256352404347a37ce48f25f3e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theManager: {fileID: 1935174273}
 --- !u!1 &848132698
 GameObject:
   m_ObjectHideFlags: 0
@@ -8014,7 +8085,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229918
+  m_Name: pb_Mesh252866
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8201,7 +8272,7 @@ MeshCollider:
   m_GameObject: {fileID: 932852636}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -8514,7 +8585,7 @@ MeshCollider:
   m_GameObject: {fileID: 935330700}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -8804,7 +8875,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh230004
+  m_Name: pb_Mesh252952
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8991,7 +9062,7 @@ MeshCollider:
   m_GameObject: {fileID: 969329025}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -9281,7 +9352,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229440
+  m_Name: pb_Mesh252400
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9445,7 +9516,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh230108
+  m_Name: pb_Mesh253056
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9632,7 +9703,7 @@ MeshCollider:
   m_GameObject: {fileID: 993492109}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -9923,6 +9994,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (20)
@@ -10107,7 +10182,7 @@ MeshCollider:
   m_GameObject: {fileID: 1003639950}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -10391,115 +10466,6 @@ Transform:
   m_Father: {fileID: 1830018443}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1011151190
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1011151195}
-  - component: {fileID: 1011151194}
-  - component: {fileID: 1011151193}
-  - component: {fileID: 1011151192}
-  - component: {fileID: 1011151191}
-  m_Layer: 0
-  m_Name: Goal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1011151191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011151190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd590256352404347a37ce48f25f3e08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theManager: {fileID: 1935174273}
---- !u!135 &1011151192
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011151190}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1011151193
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011151190}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1011151194
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011151190}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1011151195
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011151190}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.25, y: 100.5, z: 93.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1935174274}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1031008513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10507,6 +10473,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (10)
@@ -10574,6 +10544,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (8)
@@ -10635,7 +10609,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh230072
+  m_Name: pb_Mesh253020
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10822,7 +10796,7 @@ MeshCollider:
   m_GameObject: {fileID: 1122072910}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -11112,7 +11086,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229826
+  m_Name: pb_Mesh252774
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11313,7 +11287,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1161351348
 PrefabInstance:
@@ -11322,6 +11296,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (23)
@@ -11383,7 +11361,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229774
+  m_Name: pb_Mesh252722
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11648,6 +11626,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (5)
@@ -11732,7 +11714,7 @@ MeshCollider:
   m_GameObject: {fileID: 1279620294}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -12023,6 +12005,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (4)
@@ -12096,6 +12082,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (19)
@@ -12178,11 +12168,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 29.25, z: 27.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1935174274}
   - {fileID: 2096607078}
   - {fileID: 262638493}
   - {fileID: 481133057}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1333067898
 Mesh:
@@ -12190,7 +12181,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh230150
+  m_Name: pb_Mesh253098
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12355,6 +12346,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (2)
@@ -12439,7 +12434,7 @@ MeshCollider:
   m_GameObject: {fileID: 1420457694}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -12729,7 +12724,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh230134
+  m_Name: pb_Mesh253082
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12916,7 +12911,7 @@ MeshCollider:
   m_GameObject: {fileID: 1467256238}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -13206,7 +13201,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229548
+  m_Name: pb_Mesh252508
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13370,7 +13365,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229868
+  m_Name: pb_Mesh252816
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13535,6 +13530,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (13)
@@ -13597,6 +13596,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 262638493}
     m_Modifications:
+    - target: {fileID: 5031056299498221654, guid: 792f854bf114a2b449fe89c0190beef9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869905942619752075, guid: 792f854bf114a2b449fe89c0190beef9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8869905942985717805, guid: 792f854bf114a2b449fe89c0190beef9, type: 3}
       propertyPath: towerPrefab
       value: 
@@ -13653,6 +13660,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8869905943033161928, guid: 792f854bf114a2b449fe89c0190beef9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869905943305914587, guid: 792f854bf114a2b449fe89c0190beef9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 792f854bf114a2b449fe89c0190beef9, type: 3}
 --- !u!1 &1560291233
@@ -13684,7 +13699,7 @@ MeshCollider:
   m_GameObject: {fileID: 1560291233}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -13997,7 +14012,7 @@ MeshCollider:
   m_GameObject: {fileID: 1598523309}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -14310,7 +14325,7 @@ MeshCollider:
   m_GameObject: {fileID: 1614720371}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -14600,7 +14615,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229026
+  m_Name: pb_Mesh251982
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14764,7 +14779,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229682
+  m_Name: pb_Mesh252630
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14929,6 +14944,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (12)
@@ -15013,7 +15032,7 @@ MeshCollider:
   m_GameObject: {fileID: 1671526567}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -15326,7 +15345,7 @@ MeshCollider:
   m_GameObject: {fileID: 1715060906}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -15616,7 +15635,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh228994
+  m_Name: pb_Mesh251950
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15781,6 +15800,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (7)
@@ -15842,7 +15865,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229038
+  m_Name: pb_Mesh251994
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16029,7 +16052,7 @@ MeshCollider:
   m_GameObject: {fileID: 1790433047}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -16319,7 +16342,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229264
+  m_Name: pb_Mesh252220
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16484,6 +16507,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (17)
@@ -16568,7 +16595,7 @@ MeshCollider:
   m_GameObject: {fileID: 1798566608}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -16923,7 +16950,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229612
+  m_Name: pb_Mesh252560
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17113,7 +17140,7 @@ Transform:
   m_LocalScale: {x: 2000, y: 1, z: 2000}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1853017644
 BoxCollider:
@@ -17290,7 +17317,7 @@ MeshCollider:
   m_GameObject: {fileID: 1892626216}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -17580,7 +17607,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229214
+  m_Name: pb_Mesh252170
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17744,7 +17771,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229814
+  m_Name: pb_Mesh252762
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17907,7 +17934,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1329358766}
     m_Modifications:
     - target: {fileID: 4009823678481179396, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: startButton
@@ -17931,7 +17958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4009823678481179399, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4009823678481179399, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17939,11 +17966,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4009823678481179399, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -29.25
       objectReference: {fileID: 0}
     - target: {fileID: 4009823678481179399, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -27.25
       objectReference: {fileID: 0}
     - target: {fileID: 4009823678481179399, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17951,15 +17978,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4009823678481179399, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4009823678481179399, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4009823678481179399, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4009823678481179399, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18030,7 +18057,7 @@ MeshCollider:
   m_GameObject: {fileID: 1979203639}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -18343,7 +18370,7 @@ MeshCollider:
   m_GameObject: {fileID: 1999781385}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -18633,7 +18660,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh230060
+  m_Name: pb_Mesh253008
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18798,6 +18825,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (11)
@@ -18882,7 +18913,7 @@ MeshCollider:
   m_GameObject: {fileID: 2076675911}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -19172,7 +19203,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229512
+  m_Name: pb_Mesh252472
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19382,7 +19413,7 @@ Transform:
   - {fileID: 163141257}
   - {fileID: 1161351349}
   m_Father: {fileID: 1329358766}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2097215175
 GameObject:
@@ -19413,7 +19444,7 @@ MeshCollider:
   m_GameObject: {fileID: 2097215175}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -19704,6 +19735,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096607078}
     m_Modifications:
+    - target: {fileID: 3069028181445791233, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3069028181445791234, guid: 476676478a11ade418c2bc821a6b43ae, type: 3}
       propertyPath: m_Name
       value: Turret Node (18)
@@ -19788,7 +19823,7 @@ MeshCollider:
   m_GameObject: {fileID: 2128693502}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -20171,7 +20206,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh228886
+  m_Name: pb_Mesh251842
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20435,7 +20470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4279897855223408768, guid: 919e3ed9489e0fb4c8c12d774e7834e6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4279897855223408768, guid: 919e3ed9489e0fb4c8c12d774e7834e6, type: 3}
       propertyPath: m_LocalPosition.x

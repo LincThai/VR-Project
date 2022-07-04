@@ -100,5 +100,6 @@ public class SpawnManager : MonoBehaviour
         {
             specialUnitChance += specialUnitChanceIncrease;
         }
+        startButton.SetActive(false);
     }
 }

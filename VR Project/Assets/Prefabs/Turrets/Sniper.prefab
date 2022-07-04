@@ -51,6 +51,7 @@ MonoBehaviour:
   uiFunction:
     m_PersistentCalls:
       m_Calls: []
+  platformHeight: 4.2
 --- !u!114 &9014581105285827530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,8 +87,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4, y: 3, z: 7.8}
+  m_Center: {x: 0, y: -0.6, z: -2.3}
 --- !u!1 &6106065576045975500
 GameObject:
   m_ObjectHideFlags: 0

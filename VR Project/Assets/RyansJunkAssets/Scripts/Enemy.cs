@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
 
     [Tooltip("Enemy health")]
     public float health;
+    [Tooltip("How much gold the player gets for killing it.")]
+    public int goldDrop;
 
     // Start is called before the first frame update
     void Start()

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 using UnityEngine.XR;
 
 public class InteractingController : MonoBehaviour
@@ -16,7 +16,7 @@ public class InteractingController : MonoBehaviour
     [Tooltip("Max distance from node to 'grab' the object being held")]
     public float nodeGrabDistance = 15.0f;
     [Tooltip("Distance the turret will hover over the ground/node while it is held")]
-    public float turretHoverDistance = 25.0f;
+    public float turretHoverDistance = 10.0f;
 
     [Header("Tag and Layer names")]
     [Tooltip("Tag name of Nodes")]
@@ -28,12 +28,12 @@ public class InteractingController : MonoBehaviour
 
     [Header("Scene objects to set")]
 
+    [Tooltip("Add the money manager")]
+    public MoneyManager moneyManager;
     [Tooltip("The sphere childed to this hand")]
     public GameObject ballChild;
     [Tooltip("Temp node I am using to see position of certain things")]
     public GameObject node;
-
-
 
     //ball thing - dumb ball renderer wont let me turn it off :(
     MeshRenderer ballRenderer;
@@ -48,6 +48,9 @@ public class InteractingController : MonoBehaviour
     GameObject closestNode = null;
     //if the closest node is close enough that when the turret is let go of, it can go to it.
     bool isClosestNodeValid = false;
+
+    GameObject[] nodeList;
+    bool nodeListUpdated = false;
 
 
     //Last object hit with raycast, alongside "objectHitLastCheck" for AttemptInteract() to use if the button is pressed
@@ -93,16 +96,27 @@ public class InteractingController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, maxRaycastLength))//, LayerMask.GetMask("Interactable")))
         {
-
             //Only care about what we hit if it is an 'interactable', but still need the raycast data if it hit something else
-            if (lastObjectHit.layer == LayerMask.NameToLayer(interactableLayer))
+            GameObject objectHit = hit.transform.gameObject;
+            if (objectHit.layer == LayerMask.NameToLayer(interactableLayer))
             { 
-                lastObjectHit = hit.transform.gameObject;
-                Interactable interact = lastObjectHit.GetComponent<Interactable>();
-                interact.HoveredOver();
+                lastObjectHit = objectHit;
 
-                objectHitLastCheck = true;
-                timeSinceLastRaycastHit = 0;
+                Interactable interact = lastObjectHit.GetComponentInParent<Interactable>();
+
+                if (interact != null)
+                {
+
+                    interact.HoveredOver();
+                    objectHitLastCheck = true;
+                    timeSinceLastRaycastHit = 0;
+                }
+                else
+                {
+                    Debug.LogWarning("Interactable object does not have a findable 'interactable' script attached");
+                }
+                
+
             }
             else
             {
@@ -120,7 +134,7 @@ public class InteractingController : MonoBehaviour
             timeSinceLastRaycastHit += Time.deltaTime;
             //node.transform.position = this.transform.position + this.transform.forward * 10;
             SetInteractBallDist(maxRaycastLength);
-            ballRenderer.enabled = false;
+            ballRenderer.enabled = true;
             objectHitLastCheck = false;
             laser.SetLaserDistFromHand(25.0f);
 
@@ -130,8 +144,10 @@ public class InteractingController : MonoBehaviour
     void RaycastWhenItemHeld()
     {
         RaycastHit hit;
-        if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, maxRaycastLength, LayerMask.GetMask(interactableLayer)))
+        if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, maxRaycastLength, ~LayerMask.GetMask(interactableLayer, "Ignore Raycast")))
         {
+
+  
             /* 
              * Get point on ground of where turret currently is
              * Check for closest nodes, if closest in range is used
@@ -140,16 +156,20 @@ public class InteractingController : MonoBehaviour
              * if one is in range, put turret above.
              */
 
-            Vector3 raycastpointtouselater = hit.point;
             float distance;
-
-            GameObject[] nodes = GameObject.FindGameObjectsWithTag(nodeTag);
-            GameObject closest = GetClosestOpenNode(nodes, raycastpointtouselater, out distance);
+            if (!nodeListUpdated)
+            {
+                nodeListUpdated = true;
+                
+                nodeList = GameObject.FindGameObjectsWithTag(nodeTag);
+            }
+            GameObject closest = GetClosestOpenNode(nodeList, hit.point, out distance);
 
             if (closest != null && nodeGrabDistance > distance)
             {
                 //Sets turret to hover above node
                 SetHeldItemPosition(closest.transform.position + Vector3.up * turretHoverDistance);
+                closestNode = closest;
                 isClosestNodeValid = true;
             }
             else
@@ -158,11 +178,14 @@ public class InteractingController : MonoBehaviour
                 SetHeldItemPosition(hit.point + Vector3.up * turretHoverDistance);
                 isClosestNodeValid = false;
             }
-
+            SetInteractBallDist(hit.distance);
+            laser.SetLaserDistFromHand(hit.distance);
 
         } else 
         {
             SetHeldItemPosition(this.transform.position + (this.transform.forward * maxRaycastLength));
+            SetInteractBallDist(maxRaycastLength);
+            laser.SetLaserDistFromHand(25.0f);
             isClosestNodeValid = false;
         }
     }
@@ -180,7 +203,7 @@ public class InteractingController : MonoBehaviour
 
         for (int i = 0; i < nodes.Length; i++)
         {
-            if (nodes[i].GetComponent<Node>().nodeAvailable)
+            if (nodes[i].GetComponent<Node>().IsNodeAvailable())
             {
                 float distance = Vector3.Distance(nodes[i].transform.position, position);
                 if (closestDist > distance)
@@ -197,19 +220,34 @@ public class InteractingController : MonoBehaviour
 
 
     //When the "grab" button is held down, attempt to grab
-    public void AttemptInteract()
+    public void AttemptInteract(InputAction.CallbackContext interaction)
     {
+        if (interaction.phase != InputActionPhase.Started)
+        {
+            return;
+        }
+        Debug.Log("AttemptInteract Called");
+
         interactButtonHeldLastFrame = true;
         if (maxTimeToGrab > timeSinceLastRaycastHit && !isObjectHeld)
         {
             //'grab' item
             if (lastObjectHit.CompareTag(turretTag))
             {
-                Interactable turret = lastObjectHit.GetComponent<Interactable>();
-                if (turret.CanBeGrabbed())
+                Debug.Log("Get 'Turret' from LastObjectHit (1)");
+                Interactable turret = lastObjectHit.GetComponentInParent<Interactable>();
+                
+                 
+                if (turret.CanBeGrabbed(moneyManager))
                 {
+                    Debug.Log("Object could be grabbed!");
                     isObjectHeld = true;
-                    objectBeingHeld = lastObjectHit;
+                    objectBeingHeld = GetBaseParentOfTurret(lastObjectHit);
+
+
+                } else
+                {
+                    Debug.Log("Object could not be grabbed :(");
                 }
 
             }
@@ -222,15 +260,30 @@ public class InteractingController : MonoBehaviour
     }
 
     //When you let go of "grab"
-    public void StopInteract()
+    public void StopInteract(InputAction.CallbackContext interaction)
     {
+        if (interaction.phase != InputActionPhase.Canceled)
+        {
+            return;
+        }
+        Debug.Log("StopInteract called");
+
+
         interactButtonHeldLastFrame = false;
         if (isObjectHeld)
         {
+            nodeListUpdated = false;
             isObjectHeld = false;
-            Interactable turret = objectBeingHeld.GetComponent<Interactable>();
+            Interactable turret = objectBeingHeld.GetComponentInParent<Interactable>();
             //tell closest node to take turret, tell turret it has been placed, if no closest node, tell turret it was dropped.
             //Turret or node need to set turrets position to the node.
+            if (turret == null)
+            {
+                Debug.LogWarning("Interact Script Not Found!!!");
+
+                return;
+            }
+
             if (isClosestNodeValid)
             {
                 turret.SetToNode(closestNode);
@@ -238,10 +291,45 @@ public class InteractingController : MonoBehaviour
             }
             else
             {
-                turret.Voided();
+                turret.Voided(moneyManager);
             }
 
         }
+    }
+
+    GameObject GetBaseParentOfTurret(GameObject turret)
+    {
+        if (!turret.CompareTag(turretTag))
+        {
+            Debug.LogWarning("Wrong Object passed into function 'GetBaseParentOfTurret(GameObject Turret)' pls fix");
+            return turret;
+        }
+
+        GameObject highestWithTag = turret;
+        GameObject higherParent = null;
+
+        if (turret.transform.parent == null)
+        {
+            Debug.Log("Early exit from 'GetBaseParentOfTurret'");
+            return highestWithTag;
+        } else
+        {
+            higherParent = turret.transform.parent.gameObject;
+        }
+        
+        while (higherParent.CompareTag(turretTag) && higherParent.transform.parent != null)
+        {
+            highestWithTag = higherParent;
+            higherParent = higherParent.transform.parent.gameObject;
+        }
+        //not sure of a way I can incoperate the last part of this into the while loop
+        //It leaves the loop early due to the null check, but the check is required
+        if (higherParent.CompareTag(turretTag))
+        {
+            highestWithTag = higherParent;
+        }
+
+        return highestWithTag;
     }
 
     void SetInteractBallDist(float distance)

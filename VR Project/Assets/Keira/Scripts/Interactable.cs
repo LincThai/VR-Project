@@ -17,10 +17,14 @@ public class Interactable : MonoBehaviour
     [SerializeField]
     UnityEvent uiFunction = null;
 
+    [SerializeField]
+    float platformHeight = 4.2f;
+
     Tower tower;
 
     Node node;
 
+    bool beingHeld;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +35,10 @@ public class Interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (beingHeld)
+        {
+            tower.ResetRangeDisplayTimer();
+        }
     }
 
     /* 
@@ -47,6 +54,7 @@ public class Interactable : MonoBehaviour
             {
                 if (mManager.SpendGold(tower.cost))
                 {
+                    beingHeld = true;
                     return true;
                 }
             }
@@ -104,10 +112,11 @@ public class Interactable : MonoBehaviour
 
         tower.ActivateTower();
         tower.setAsUsed();
-        tower.transform.position = node.transform.position;
+        tower.transform.position = node.transform.position + Vector3.up * platformHeight;
 
         node.SetUnavailable();
 
+        beingHeld = false;
         RefreshTurret();
     }
 

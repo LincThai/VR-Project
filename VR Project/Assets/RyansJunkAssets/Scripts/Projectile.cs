@@ -23,12 +23,22 @@ public class Projectile : MonoBehaviour
         transform.position = new Vector3(flightPath.FindX(t), flightPath.FindY(t), flightPath.FindZ(t));
 
         t += projectileSpeed * Time.deltaTime;
+
+        if (transform.position == flightPath.GetEnd())
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetProjectileValues(Vector3 startPosition, Vector3 targetPosition, float controlPointHeight, float pSPeed)
     {
         flightPath = new BezierCurve(startPosition, new Vector3((startPosition.x + targetPosition.x) / 2, ((startPosition.y + targetPosition.y) / 2) + controlPointHeight, (startPosition.z + targetPosition.z) / 2), targetPosition);
         projectileSpeed = pSPeed;
+
+        if (targetPosition == new Vector3((startPosition.x + targetPosition.x) / 2, ((startPosition.y + targetPosition.y) / 2) + controlPointHeight, (startPosition.z + targetPosition.z) / 2)) // wouldn't be surprised if this is bad
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetSpawnManager(SpawnManager sManager)
@@ -48,7 +58,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Tower"))
+        if (!collision.gameObject.CompareTag("Turret") && !collision.gameObject.CompareTag("Node"))
         {
             if (spawnManager.enemyList.Count != 0)
             {
@@ -68,7 +78,7 @@ public class Projectile : MonoBehaviour
                         }
                     }
                 }
-                else
+                else if (collision.gameObject.CompareTag("Enemy"))
                 {
                     enemyStats = collision.gameObject.GetComponent<Enemy>();
                     enemyStats.health -= damage;

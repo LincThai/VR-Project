@@ -10,6 +10,7 @@ TagManager:
   - Undefined
   - Node
   - Turret
+  - UI
   layers:
   - Default
   - TransparentFX

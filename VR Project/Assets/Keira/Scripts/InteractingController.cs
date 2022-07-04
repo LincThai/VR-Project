@@ -138,7 +138,7 @@ public class InteractingController : MonoBehaviour
             SetInteractBallDist(maxRaycastLength);
             ballRenderer.enabled = true;
             objectHitLastCheck = false;
-            laser.SetLaserDistFromHand(25.0f);
+            laser.SetLaserDistFromHand(maxRaycastLength);
 
         }
     }

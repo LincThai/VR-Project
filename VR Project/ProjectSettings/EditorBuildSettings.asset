@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Keira/Scenes/Test Scene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Keira/Scenes/Asset Scene.unity
+    guid: 4c0be08c3ef65a24296da9c2bca92546
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: cb48791edd0644e40afedc56715ccfa7, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: da7677f368b19f9418b254af6fb3d801, type: 2}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
+  m_IndirectSpecularColor: {r: 0.28502586, g: 0.37139237, b: 0.4960093, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4030,6 +4030,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 262638493}
     m_Modifications:
+    - target: {fileID: 8869905942985717805, guid: 792f854bf114a2b449fe89c0190beef9, type: 3}
+      propertyPath: arcOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869905942985717805, guid: 792f854bf114a2b449fe89c0190beef9, type: 3}
+      propertyPath: blastRadius
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8869905942985717805, guid: 792f854bf114a2b449fe89c0190beef9, type: 3}
       propertyPath: towerPrefab
       value: 
@@ -8086,7 +8094,7 @@ MonoBehaviour:
   uiFunction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1295127191}
         m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
         m_MethodName: NewRound
         m_Mode: 1

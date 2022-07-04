@@ -23,6 +23,8 @@ public class InteractingController : MonoBehaviour
     string nodeTag = "Node";
     [Tooltip("Tag name of Turrets")]
     string turretTag = "Turret";
+    [Tooltip("Tag name of UI")]
+    string uiTag = "UI";
     [Tooltip("Layer name of Interactables")]
     string interactableLayer = "Interactable";
 
@@ -136,7 +138,7 @@ public class InteractingController : MonoBehaviour
             SetInteractBallDist(maxRaycastLength);
             ballRenderer.enabled = true;
             objectHitLastCheck = false;
-            laser.SetLaserDistFromHand(25.0f);
+            laser.SetLaserDistFromHand(maxRaycastLength);
 
         }
     }
@@ -232,12 +234,12 @@ public class InteractingController : MonoBehaviour
         if (maxTimeToGrab > timeSinceLastRaycastHit && !isObjectHeld)
         {
             //'grab' item
-            if (lastObjectHit.CompareTag(turretTag))
+            if (lastObjectHit.CompareTag(turretTag) || lastObjectHit.CompareTag(uiTag))
             {
                 Debug.Log("Get 'Turret' from LastObjectHit (1)");
                 Interactable turret = lastObjectHit.GetComponentInParent<Interactable>();
-                
-                 
+
+
                 if (turret.CanBeGrabbed(moneyManager))
                 {
                     Debug.Log("Object could be grabbed!");
@@ -245,7 +247,8 @@ public class InteractingController : MonoBehaviour
                     objectBeingHeld = GetBaseParentOfTurret(lastObjectHit);
 
 
-                } else
+                }
+                else
                 {
                     Debug.Log("Object could not be grabbed :(");
                 }

@@ -29,10 +29,13 @@ public class SpawnManager : MonoBehaviour
     bool newRound = false;
     bool gameStart = true;
 
+    bool tested = false;
+    public float t = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        spawnCount = enemySpawnTotal;
     }
 
     // Update is called once per frame
@@ -48,6 +51,14 @@ public class SpawnManager : MonoBehaviour
             newRound = false;
             startButton.SetActive(true);
         }
+
+        //if (t > 10.0f && tested == false)
+        //{
+        //    tested = true;
+        //    newRound = false;
+        //    NewRound();
+        //}
+        //t += Time.deltaTime;
     }
 
     public void IncrementCounts()
@@ -100,5 +111,6 @@ public class SpawnManager : MonoBehaviour
         {
             specialUnitChance += specialUnitChanceIncrease;
         }
+        startButton.SetActive(false);
     }
 }

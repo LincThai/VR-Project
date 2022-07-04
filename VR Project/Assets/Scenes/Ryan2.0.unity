@@ -538,7 +538,6 @@ MonoBehaviour:
   available: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   selected: {r: 0, g: 1, b: 0, a: 1}
   locked: {r: 1, g: 0, b: 0, a: 1}
-  nodeAvailable: 1
 --- !u!1 &351518087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,7 +1484,6 @@ MonoBehaviour:
   available: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   selected: {r: 0, g: 1, b: 0, a: 1}
   locked: {r: 1, g: 0, b: 0, a: 1}
-  nodeAvailable: 1
 --- !u!1 &678184558
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,6 +2060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2260fac6f3006f94c94394b0291bc290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: 20
 --- !u!4 &803874024
 Transform:
   m_ObjectHideFlags: 0
@@ -2455,7 +2454,6 @@ MonoBehaviour:
   available: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   selected: {r: 0, g: 1, b: 0, a: 1}
   locked: {r: 1, g: 0, b: 0, a: 1}
-  nodeAvailable: 1
 --- !u!1 &1039495510
 GameObject:
   m_ObjectHideFlags: 0
@@ -2567,7 +2565,6 @@ MonoBehaviour:
   available: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   selected: {r: 0, g: 1, b: 0, a: 1}
   locked: {r: 1, g: 0, b: 0, a: 1}
-  nodeAvailable: 1
 --- !u!1 &1208867032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2679,7 +2676,6 @@ MonoBehaviour:
   available: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   selected: {r: 0, g: 1, b: 0, a: 1}
   locked: {r: 1, g: 0, b: 0, a: 1}
-  nodeAvailable: 1
 --- !u!1 &1247921745
 GameObject:
   m_ObjectHideFlags: 0
@@ -3776,7 +3772,6 @@ MonoBehaviour:
   available: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   selected: {r: 0, g: 1, b: 0, a: 1}
   locked: {r: 1, g: 0, b: 0, a: 1}
-  nodeAvailable: 1
 --- !u!1 &1473225508
 GameObject:
   m_ObjectHideFlags: 0
@@ -4078,7 +4073,6 @@ MonoBehaviour:
   available: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   selected: {r: 0, g: 1, b: 0, a: 1}
   locked: {r: 1, g: 0, b: 0, a: 1}
-  nodeAvailable: 1
 --- !u!1 &1546400186
 GameObject:
   m_ObjectHideFlags: 0
@@ -4190,7 +4184,6 @@ MonoBehaviour:
   available: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   selected: {r: 0, g: 1, b: 0, a: 1}
   locked: {r: 1, g: 0, b: 0, a: 1}
-  nodeAvailable: 1
 --- !u!1 &1601963244
 GameObject:
   m_ObjectHideFlags: 0
@@ -4502,7 +4495,6 @@ MonoBehaviour:
   available: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   selected: {r: 0, g: 1, b: 0, a: 1}
   locked: {r: 1, g: 0, b: 0, a: 1}
-  nodeAvailable: 1
 --- !u!1 &1797405977
 GameObject:
   m_ObjectHideFlags: 0
@@ -5700,7 +5692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063399002}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.072, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 481556815}

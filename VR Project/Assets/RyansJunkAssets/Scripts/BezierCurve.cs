@@ -53,4 +53,19 @@ public class BezierCurve
 
         return z;
     }
+
+    public Vector3 GetStart()
+    {
+        return start;
+    }
+
+    public Vector3 GetControlPoint()
+    {
+        return controlPoint;
+    }
+
+    public Vector3 GetEnd()
+    {
+        return end;
+    }
 }

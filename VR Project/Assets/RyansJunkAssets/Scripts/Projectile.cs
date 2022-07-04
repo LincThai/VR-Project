@@ -23,6 +23,11 @@ public class Projectile : MonoBehaviour
         transform.position = new Vector3(flightPath.FindX(t), flightPath.FindY(t), flightPath.FindZ(t));
 
         t += projectileSpeed * Time.deltaTime;
+
+        if (transform.position == flightPath.GetEnd())
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetProjectileValues(Vector3 startPosition, Vector3 targetPosition, float controlPointHeight, float pSPeed)

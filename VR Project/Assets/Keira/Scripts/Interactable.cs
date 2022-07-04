@@ -21,6 +21,7 @@ public class Interactable : MonoBehaviour
 
     Node node;
 
+    bool beingHeld;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,10 @@ public class Interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (beingHeld)
+        {
+            tower.ResetRangeDisplayTimer();
+        }
     }
 
     /* 
@@ -47,6 +51,7 @@ public class Interactable : MonoBehaviour
             {
                 if (mManager.SpendGold(tower.cost))
                 {
+                    beingHeld = true;
                     return true;
                 }
             }
@@ -108,6 +113,7 @@ public class Interactable : MonoBehaviour
 
         node.SetUnavailable();
 
+        beingHeld = false;
         RefreshTurret();
     }
 

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4504042214445459005}
   m_Layer: 0
   m_Name: TankTypeEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -70,8 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc17da9834ad15a4ab683be85bcd769f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
-  goldDrop: 0
+  health: 200
+  goldDrop: 10
 --- !u!114 &3109470833103516497
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -66,6 +66,11 @@ public class Interactable : MonoBehaviour
         } else if (interactableType == InteractableType.UI)
         {
             //do ui thing, whatever idk
+            if (uiFunction != null)
+            {
+                uiFunction.Invoke();
+ 
+            }
             return false;
         }
 

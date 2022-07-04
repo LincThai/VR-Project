@@ -4046,6 +4046,10 @@ PrefabInstance:
       propertyPath: spawnManager
       value: 
       objectReference: {fileID: 1295127191}
+    - target: {fileID: 8869905942985717805, guid: 792f854bf114a2b449fe89c0190beef9, type: 3}
+      propertyPath: projectileSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8869905942985717808, guid: 792f854bf114a2b449fe89c0190beef9, type: 3}
       propertyPath: m_Name
       value: Turret (2)

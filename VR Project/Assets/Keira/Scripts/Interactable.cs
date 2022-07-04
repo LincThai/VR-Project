@@ -17,6 +17,9 @@ public class Interactable : MonoBehaviour
     [SerializeField]
     UnityEvent uiFunction = null;
 
+    [SerializeField]
+    float platformHeight = 4.2f;
+
     Tower tower;
 
     Node node;
@@ -109,7 +112,7 @@ public class Interactable : MonoBehaviour
 
         tower.ActivateTower();
         tower.setAsUsed();
-        tower.transform.position = node.transform.position;
+        tower.transform.position = node.transform.position + Vector3.up * platformHeight;
 
         node.SetUnavailable();
 

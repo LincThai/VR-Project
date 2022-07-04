@@ -5,8 +5,8 @@ using TMPro;
 
 public class MoneyManager : MonoBehaviour
 {
-    [SerializeField]
-    int gold = 20;
+    //[SerializeField]
+    public int gold = 20;
     [SerializeField]
     TextMeshProUGUI goldDisplay;
 
@@ -43,14 +43,17 @@ public class MoneyManager : MonoBehaviour
 
     }
 
-    public void AddGold(int gold)
+    public void AddGold(int goldIncrease)
     {
-        gold += gold;
+        gold += goldIncrease;
         UpdateTextDisplay();
     }
 
     public void UpdateTextDisplay()
     {
-        goldDisplay.text = "Gold: " + gold;
+        if (goldDisplay != null)
+        {
+            goldDisplay.text = "Gold: " + gold;
+        }
     }
 }

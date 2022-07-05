@@ -22092,7 +22092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 501909203917047581, guid: bf0889313fc5fbd4d829f51d2b035068, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 38.5
+      value: 86.7
       objectReference: {fileID: 0}
     - target: {fileID: 501909203917047581, guid: bf0889313fc5fbd4d829f51d2b035068, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22134,6 +22134,10 @@ PrefabInstance:
       propertyPath: spawnManager
       value: 
       objectReference: {fileID: 435841673}
+    - target: {fileID: 6742460689163468166, guid: bf0889313fc5fbd4d829f51d2b035068, type: 3}
+      propertyPath: projectileSpeed
+      value: 0.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf0889313fc5fbd4d829f51d2b035068, type: 3}
 --- !u!1001 &6167617986118845141
@@ -22222,7 +22226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1777601465776648764, guid: b7f7f2975b673af4e80c81a8c531ce6d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 38.5
+      value: 78.6
       objectReference: {fileID: 0}
     - target: {fileID: 1777601465776648764, guid: b7f7f2975b673af4e80c81a8c531ce6d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22255,6 +22259,10 @@ PrefabInstance:
     - target: {fileID: 8820989964881030731, guid: b7f7f2975b673af4e80c81a8c531ce6d, type: 3}
       propertyPath: m_Name
       value: Mortar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820989964881030731, guid: b7f7f2975b673af4e80c81a8c531ce6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9074922976452772493, guid: b7f7f2975b673af4e80c81a8c531ce6d, type: 3}
       propertyPath: costDisplay

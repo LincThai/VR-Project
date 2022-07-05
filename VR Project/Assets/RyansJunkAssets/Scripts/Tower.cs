@@ -116,6 +116,7 @@ public class Tower : MonoBehaviour
                     }
                     if (target != null)
                     {
+                        //lookAt(target.transform);
                         boomAudio.Play();
 
                         Vector3 predictedPosition;
@@ -125,7 +126,7 @@ public class Tower : MonoBehaviour
                         }
                         else
                         {
-                            predictedPosition = target.transform.position + (target.GetComponent<NavMeshAgent>().velocity * target.GetComponent<NavMeshAgent>().speed);
+                            predictedPosition = target.transform.position + (target.GetComponent<NavMeshAgent>().velocity); //  * target.GetComponent<NavMeshAgent>().speed
                         }
 
                         GameObject p = Instantiate(projectile, new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), transform.rotation);
@@ -178,5 +179,10 @@ public class Tower : MonoBehaviour
     public void setAsUsed()
     {
         used = true;
+    }
+
+    void Rotate()
+    {
+        
     }
 }

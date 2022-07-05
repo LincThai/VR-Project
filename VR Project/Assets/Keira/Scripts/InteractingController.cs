@@ -36,6 +36,10 @@ public class InteractingController : MonoBehaviour
     public GameObject ballChild;
     [Tooltip("Temp node I am using to see position of certain things")]
     public GameObject node;
+    [Tooltip("environment every item is childed to, to make the whole level move-able")]
+    public Transform environment;
+    [Tooltip("the offset to set the environment to from the controller")]
+    public Vector3 environmentOffset;
 
     //ball thing - dumb ball renderer wont let me turn it off :(
     MeshRenderer ballRenderer;
@@ -81,16 +85,16 @@ public class InteractingController : MonoBehaviour
         if (!isObjectHeld)
         {
             //raycast to do when no item is held
-            GeneralRaycast();   
+            GeneralRaycast();
         }
         else
         {
             //What do to when an item is held
             RaycastWhenItemHeld();
-        }   
+        }
     }
 
-    void GeneralRaycast ()
+    void GeneralRaycast()
     {
         laser.laserActive = true;
         //When holding an item, it needs to do a second raycast from this items position in the same direction to position it just above the surface
@@ -101,7 +105,7 @@ public class InteractingController : MonoBehaviour
             //Only care about what we hit if it is an 'interactable', but still need the raycast data if it hit something else
             GameObject objectHit = hit.transform.gameObject;
             if (objectHit.layer == LayerMask.NameToLayer(interactableLayer))
-            { 
+            {
                 lastObjectHit = objectHit;
 
                 Interactable interact = lastObjectHit.GetComponentInParent<Interactable>();
@@ -117,7 +121,7 @@ public class InteractingController : MonoBehaviour
                 {
                     Debug.LogWarning("Interactable object does not have a findable 'interactable' script attached");
                 }
-                
+
 
             }
             else
@@ -149,7 +153,7 @@ public class InteractingController : MonoBehaviour
         if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, maxRaycastLength, ~LayerMask.GetMask(interactableLayer, "Ignore Raycast")))
         {
 
-  
+
             /* 
              * Get point on ground of where turret currently is
              * Check for closest nodes, if closest in range is used
@@ -162,7 +166,7 @@ public class InteractingController : MonoBehaviour
             if (!nodeListUpdated)
             {
                 nodeListUpdated = true;
-                
+
                 nodeList = GameObject.FindGameObjectsWithTag(nodeTag);
             }
             GameObject closest = GetClosestOpenNode(nodeList, hit.point, out distance);
@@ -183,7 +187,7 @@ public class InteractingController : MonoBehaviour
             SetInteractBallDist(hit.distance);
             laser.SetLaserDistFromHand(hit.distance);
 
-        } else 
+        } else
         {
             SetHeldItemPosition(this.transform.position + (this.transform.forward * maxRaycastLength));
             SetInteractBallDist(maxRaycastLength);
@@ -194,7 +198,7 @@ public class InteractingController : MonoBehaviour
 
     void SetHeldItemPosition(Vector3 position)
     {
-        objectBeingHeld.transform.position = position; 
+        objectBeingHeld.transform.position = position;
     }
 
     GameObject GetClosestOpenNode(GameObject[] nodes, Vector3 position, out float outDistance)
@@ -297,6 +301,21 @@ public class InteractingController : MonoBehaviour
                 turret.Voided(moneyManager);
             }
 
+        }
+    }
+
+    public void SetEnvironmentPos(InputAction.CallbackContext interaction)
+    {
+        if (interaction.phase != InputActionPhase.Canceled)
+        {
+            return;
+        }
+        Debug.Log("SetEnvironmentPos called");
+
+        if (environment != null)
+        {
+            environment.position = this.transform.position + environmentOffset;
+            environment.rotation = this.transform.rotation;
         }
     }
 

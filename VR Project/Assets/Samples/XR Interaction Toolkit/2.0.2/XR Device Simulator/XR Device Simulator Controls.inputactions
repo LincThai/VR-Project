@@ -512,6 +512,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "X Pressed",
+                    "type": "Button",
+                    "id": "c88c8617-c663-41c1-9a73-922419b10259",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Primary Button",
                     "type": "Button",
                     "id": "f21a59fc-ba2d-43ac-9051-f61598c360bd",
@@ -954,6 +963,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Trigger Release",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c6a5109b-4b7e-4856-8466-e700837910bd",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X Pressed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

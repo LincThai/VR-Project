@@ -98,6 +98,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f0b581a59d7a41e4e8ee5549fdb43c7f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 22381a0e2f885d74d927b4a1cffc06ca, type: 2}
     - target: {fileID: 919132149155446097, guid: f0b581a59d7a41e4e8ee5549fdb43c7f, type: 3}
       propertyPath: m_Name
       value: Env_Mesh_MushroomPlatform_01

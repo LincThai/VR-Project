@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 6a38e068921eb6f42aa08cbe8cac57e4
+guid: eeaa96075c1581742ab29c8c776cbcfe
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 1761072334426369097
+    second: frogposedsit
   externalObjects: {}
   materials:
     materialImportMode: 2

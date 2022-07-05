@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class Tower : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Tower : MonoBehaviour
     public float rangeDisplayTimeLength = 5.0f;
     [Tooltip("Put in prefab of this turrets desired type")]
     public GameObject towerPrefab;
+    [Tooltip("Put in textbox for tower cost")]
+    public TextMeshProUGUI costDisplay;
 
     GameObject rangeIndicator;
 
@@ -60,6 +63,11 @@ public class Tower : MonoBehaviour
         rangeIndicator.transform.localScale = new Vector3(range / transform.localScale.x * 2, range / transform.localScale.z * 2, 1.0f);
 
         rangeIndicator.SetActive(false);
+
+        if (costDisplay != null)
+        {
+            costDisplay.text = "Cost: " + cost;
+        }
     }
 
     // Update is called once per frame

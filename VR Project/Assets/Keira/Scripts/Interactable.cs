@@ -55,6 +55,7 @@ public class Interactable : MonoBehaviour
                 if (mManager.SpendGold(tower.cost))
                 {
                     beingHeld = true;
+                    tower.spawnManager.towerPickupAudio.Play();
                     return true;
                 }
             }
@@ -67,6 +68,7 @@ public class Interactable : MonoBehaviour
                     node.SetAvailable();
                 }
                 Debug.Log("self destruct");
+                tower.spawnManager.towerSellAudio.Play();
                 Destroy(gameObject);
             }
             //check if player has enough coins to buy turret, if not return false, if they do, return true, turret is grabbed, and will be told it is "let go" of at somepoint soon
@@ -78,8 +80,11 @@ public class Interactable : MonoBehaviour
             if (uiFunction != null)
             {
                 uiFunction.Invoke();
-                
- 
+                AudioSource buttonAudio = GetComponent<AudioSource>();
+                if (buttonAudio != null)
+                {
+                    buttonAudio.Play();
+                }
             }
             return false;
         }

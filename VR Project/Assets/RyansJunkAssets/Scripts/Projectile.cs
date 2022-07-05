@@ -28,10 +28,24 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        t = Mathf.Lerp(0.0f, 1.0f, t);
-        transform.position = new Vector3(flightPath.FindX(t), flightPath.FindY(t), flightPath.FindZ(t));
+        //t = Mathf.Lerp(0.0f, 1.0f, t);
 
-        t += projectileSpeed * Time.deltaTime;
+        //t += projectileSpeed * Time.deltaTime;
+
+        float distanceToTravel;
+
+        distanceToTravel = Vector3.Distance(flightPath.GetStart(), flightPath.GetControlPoint()) + Vector3.Distance(flightPath.GetControlPoint(), flightPath.GetEnd());
+
+        if (t <= 1.0f && blastRadius == 0)
+        {
+            t += projectileSpeed * Time.deltaTime * distanceToTravel;
+        }
+        else if (t <= 1.0f)
+        {
+            t += projectileSpeed * Time.deltaTime;
+        }
+
+        transform.position = new Vector3(flightPath.FindX(t), flightPath.FindY(t), flightPath.FindZ(t));
 
         if (transform.position == flightPath.GetEnd())
         {

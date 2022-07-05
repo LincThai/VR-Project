@@ -307,34 +307,16 @@ public class InteractingController : MonoBehaviour
         if (!turret.CompareTag(turretTag))
         {
             Debug.LogWarning("Wrong Object passed into function 'GetBaseParentOfTurret(GameObject Turret)' pls fix");
-            return turret;
+            return null;
         }
 
-        GameObject highestWithTag = turret;
-        GameObject higherParent = null;
+        GameObject highestObject = turret;
 
-        if (turret.transform.parent == null)
+        while (highestObject.transform.parent != null && highestObject.transform.parent.CompareTag(turretTag))
         {
-            Debug.Log("Early exit from 'GetBaseParentOfTurret'");
-            return highestWithTag;
-        } else
-        {
-            higherParent = turret.transform.parent.gameObject;
+            highestObject = highestObject.transform.parent.gameObject;
         }
-        
-        while (higherParent.CompareTag(turretTag) && higherParent.transform.parent != null)
-        {
-            highestWithTag = higherParent;
-            higherParent = higherParent.transform.parent.gameObject;
-        }
-        //not sure of a way I can incoperate the last part of this into the while loop
-        //It leaves the loop early due to the null check, but the check is required
-        if (higherParent.CompareTag(turretTag))
-        {
-            highestWithTag = higherParent;
-        }
-
-        return highestWithTag;
+        return highestObject;
     }
 
     void SetInteractBallDist(float distance)

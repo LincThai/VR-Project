@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    AudioSource shellAudio;
+    bool disabled = false;
+
     SpawnManager spawnManager;
 
     List<GameObject> deleteList = new List<GameObject>();
@@ -15,6 +18,10 @@ public class Projectile : MonoBehaviour
     float damage;
 
     float t = 0.0f;
+    void Start()
+    {
+        shellAudio = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -26,7 +33,7 @@ public class Projectile : MonoBehaviour
 
         if (transform.position == flightPath.GetEnd())
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 5);
         }
     }
 
@@ -35,10 +42,10 @@ public class Projectile : MonoBehaviour
         flightPath = new BezierCurve(startPosition, new Vector3((startPosition.x + targetPosition.x) / 2, ((startPosition.y + targetPosition.y) / 2) + controlPointHeight, (startPosition.z + targetPosition.z) / 2), targetPosition);
         projectileSpeed = pSPeed;
 
-        if (targetPosition == new Vector3((startPosition.x + targetPosition.x) / 2, ((startPosition.y + targetPosition.y) / 2) + controlPointHeight, (startPosition.z + targetPosition.z) / 2)) // wouldn't be surprised if this is bad
-        {
-            Destroy(gameObject);
-        }
+        //if (targetPosition == new Vector3((startPosition.x + targetPosition.x) / 2, ((startPosition.y + targetPosition.y) / 2) + controlPointHeight, (startPosition.z + targetPosition.z) / 2)) // wouldn't be surprised if this is bad
+        //{
+        //    Destroy(gameObject, 5);
+        //}
     }
 
     public void SetSpawnManager(SpawnManager sManager)
@@ -56,51 +63,76 @@ public class Projectile : MonoBehaviour
         damage = dam;
     }
 
+    private void OnDestroy()
+    {
+        blastRadius = 5;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Turret") && !collision.gameObject.CompareTag("Node"))
+        if (disabled == false)
         {
-            if (spawnManager.enemyList.Count != 0)
+            if (!collision.gameObject.CompareTag("Turret"))
             {
-                Enemy enemyStats;
-                if (blastRadius != 0)
+                if (!collision.gameObject.CompareTag("Node"))
                 {
-                    foreach (GameObject enemy in spawnManager.enemyList)
+                    if (spawnManager.enemyList.Count != 0)
                     {
-                        if (Vector3.Distance(transform.position, enemy.transform.position) <= blastRadius)
+                        Enemy enemyStats;
+                        if (blastRadius != 0)
                         {
-                            enemyStats = enemy.GetComponent<Enemy>();
+                            foreach (GameObject enemy in spawnManager.enemyList)
+                            {
+                                if (Vector3.Distance(transform.position, enemy.transform.position) <= blastRadius)
+                                {
+                                    enemyStats = enemy.GetComponent<Enemy>();
+                                    enemyStats.health -= damage;
+                                    if (enemyStats.health <= 0)
+                                    {
+                                        deleteList.Add(enemy);
+                                    }
+                                }
+                            }
+                        }
+                        else if (collision.gameObject.CompareTag("Enemy"))
+                        {
+                            enemyStats = collision.gameObject.GetComponent<Enemy>();
                             enemyStats.health -= damage;
                             if (enemyStats.health <= 0)
                             {
-                                deleteList.Add(enemy);
+                                deleteList.Add(collision.gameObject);
+                            }
+
+                        }
+                        if (deleteList.Count != 0)
+                        {
+                            foreach (GameObject enemy in deleteList)
+                            {
+                                spawnManager.DecrementEnemyCount();
+                                spawnManager.RemoveFromEnemies(enemy);
+                                spawnManager.moneyManager.AddGold(enemy.GetComponent<Enemy>().goldDrop);
+                                enemy.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+                                enemy.GetComponent<BoxCollider>().enabled = false;
+                                enemy.GetComponent<AudioSource>().Play();
+                                Destroy(enemy, 2);
                             }
                         }
-                    }
-                }
-                else if (collision.gameObject.CompareTag("Enemy"))
-                {
-                    enemyStats = collision.gameObject.GetComponent<Enemy>();
-                    enemyStats.health -= damage;
-                    if (enemyStats.health <= 0)
-                    {
-                        deleteList.Add(collision.gameObject);
-                    }
 
-                }
-                if (deleteList.Count != 0)
-                {
-                    foreach (GameObject enemy in deleteList)
+                    }
+                    if (blastRadius != 0)
                     {
-                        spawnManager.DecrementEnemyCount();
-                        spawnManager.RemoveFromEnemies(enemy);
-                        spawnManager.moneyManager.AddGold(enemy.GetComponent<Enemy>().goldDrop);
-                        Destroy(enemy);
+                        shellAudio.Play();
+                        disabled = true;
+                        Destroy(gameObject, 5);
+                        gameObject.GetComponent<MeshRenderer>().enabled = false;
+                        gameObject.GetComponent<SphereCollider>().enabled = false;
+                    }
+                    else
+                    {
+                        Destroy(gameObject);
                     }
                 }
-
             }
-            Destroy(gameObject);
         }
     }
 }

@@ -46,11 +46,11 @@ NavMeshAgent:
   m_GameObject: {fileID: 4040600576961007728}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.8
-  m_Speed: 18
+  m_Radius: 0.4
+  m_Speed: 8
   m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
+  avoidancePriority: 49
+  m_AngularSpeed: 60
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -71,9 +71,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc17da9834ad15a4ab683be85bcd769f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  health: 25
-  goldDrop: 10
+  damage: 3
+  health: 65
+  goldDrop: 20
 --- !u!114 &7648882767741047261
 MonoBehaviour:
   m_ObjectHideFlags: 0

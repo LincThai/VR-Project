@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
 
     SpawnManager spawnManager;
 
+    public GameObject boomPrefab;
+
     List<GameObject> deleteList = new List<GameObject>();
 
     BezierCurve flightPath;
@@ -26,10 +28,24 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        t = Mathf.Lerp(0.0f, 1.0f, t);
-        transform.position = new Vector3(flightPath.FindX(t), flightPath.FindY(t), flightPath.FindZ(t));
+        //t = Mathf.Lerp(0.0f, 1.0f, t);
 
-        t += projectileSpeed * Time.deltaTime;
+        //t += projectileSpeed * Time.deltaTime;
+
+        float distanceToTravel;
+
+        distanceToTravel = Vector3.Distance(flightPath.GetStart(), flightPath.GetControlPoint()) + Vector3.Distance(flightPath.GetControlPoint(), flightPath.GetEnd());
+
+        if (t <= 1.0f && blastRadius == 0)
+        {
+            t += projectileSpeed * Time.deltaTime * distanceToTravel;
+        }
+        else if (t <= 1.0f)
+        {
+            t += projectileSpeed * Time.deltaTime;
+        }
+
+        transform.position = new Vector3(flightPath.FindX(t), flightPath.FindY(t), flightPath.FindZ(t));
 
         if (transform.position == flightPath.GetEnd())
         {
@@ -124,6 +140,10 @@ public class Projectile : MonoBehaviour
                         shellAudio.Play();
                         disabled = true;
                         Destroy(gameObject, 5);
+                        GameObject boom = Instantiate(boomPrefab, transform.position, transform.rotation);
+                        //boom.transform.localScale = new Vector3(blastRadius, blastRadius, blastRadius);
+                        boom.GetComponent<ParticleSystem>().transform.localScale = new Vector3(blastRadius, blastRadius, blastRadius);
+
                         gameObject.GetComponent<MeshRenderer>().enabled = false;
                         gameObject.GetComponent<SphereCollider>().enabled = false;
                     }

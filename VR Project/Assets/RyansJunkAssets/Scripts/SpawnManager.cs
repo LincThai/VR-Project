@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class SpawnManager : MonoBehaviour
     public List<GameObject> enemyList = new List<GameObject>();
     public int enemyCount = 0;
     public int spawnCount = 0;
+    int roundNum = 0;
+    [Tooltip("Textbox for round num")]
+    public TextMeshProUGUI roundDisplay;
 
     [Header("Audio GameObjects")]
     public AudioSource breakAudio;
@@ -41,7 +45,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //spawnCount = enemySpawnTotal;
+        spawnCount = enemySpawnTotal;
     }
 
     // Update is called once per frame
@@ -115,6 +119,8 @@ public class SpawnManager : MonoBehaviour
     {
         spawnCount = 0;
         newRound = true;
+        roundNum++;
+        UpdateRoundNum();
 
         enemySpawnTotal += (int)(enemySpawnTotal * enemySpawnTotalScale);
 
@@ -131,5 +137,13 @@ public class SpawnManager : MonoBehaviour
             specialUnitChance += specialUnitChanceIncrease;
         }
         startButton.SetActive(false);
+    }
+
+    void UpdateRoundNum()
+    {
+        if (roundDisplay != null)
+        {
+            roundDisplay.text = "Round: " + roundNum;
+        }
     }
 }

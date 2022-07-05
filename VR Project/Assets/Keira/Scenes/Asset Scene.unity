@@ -20635,6 +20635,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 706239570}
     - target: {fileID: 4009823678481179396, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
+      propertyPath: specialUnitChance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009823678481179396, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: spawners.Array.size
       value: 1
       objectReference: {fileID: 0}

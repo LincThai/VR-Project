@@ -29,6 +29,8 @@ public class SpawnManager : MonoBehaviour
     [Header("Audio GameObjects")]
     public AudioSource breakAudio;
     public AudioSource backgroundAudio;
+    public AudioSource towerSellAudio;
+    public AudioSource towerPickupAudio;
 
     bool newRound = false;
     bool gameStart = true;

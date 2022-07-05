@@ -1970,6 +1970,10 @@ MonoBehaviour:
   maxTimeToGrab: 0.5
   nodeGrabDistance: 15
   turretHoverDistance: 10
+  nodeTag: Node
+  turretTag: Turret
+  uiTag: UI
+  interactableLayer: Interactable
   moneyManager: {fileID: 0}
   ballChild: {fileID: 4279897854223164120}
   node: {fileID: 0}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3130603077017503670
+--- !u!1 &3444197489076516782
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,18 +8,17 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 57258324482757290}
-  - component: {fileID: 3595434147365642227}
-  - component: {fileID: 7239587503517749149}
-  - component: {fileID: 2743311605450507816}
-  m_Layer: 6
-  m_Name: Ballister
+  - component: {fileID: 7045719101637121042}
+  - component: {fileID: 4484216937842338853}
+  - component: {fileID: 3539182299810628345}
+  m_Layer: 0
+  m_Name: basicfrog
   m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &57258324482757290
+--- !u!4 &7045719101637121042
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -35,8 +34,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3595434147365642227
-MonoBehaviour:
+--- !u!33 &4484216937842338853
+MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -58,7 +57,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3130603077017503670}
+  m_GameObject: {fileID: 3444197489076516782}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88d210e0fa7894f4abdc49d281e94100, type: 3}
@@ -98,9 +97,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4326128386588445623}
-  - component: {fileID: 7930411280285027780}
-  - component: {fileID: 2534284306626620103}
+  - component: {fileID: 6560471762385335975}
+  - component: {fileID: 5206769743670097045}
+  - component: {fileID: 5110731320789365050}
   m_Layer: 6
   m_Name: RangeIndicator
   m_TagString: Turret
@@ -108,35 +107,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4326128386588445623
+--- !u!4 &6560471762385335975
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8267317324885144611}
+  m_GameObject: {fileID: 6152128882378083614}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
-  m_Father: {fileID: 57258324482757290}
+  m_Father: {fileID: 5931216648191894353}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &7930411280285027780
+--- !u!33 &5206769743670097045
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8267317324885144611}
+  m_GameObject: {fileID: 6152128882378083614}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2534284306626620103
+--- !u!23 &5110731320789365050
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8267317324885144611}
+  m_GameObject: {fileID: 6152128882378083614}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -174,6 +173,91 @@ MeshRenderer:
 --- !u!1001 &5329938399863104135
 PrefabInstance:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5931216648191894353}
+  - component: {fileID: 922771477299069019}
+  - component: {fileID: 3203217585030608216}
+  - component: {fileID: 7495881091768854944}
+  - component: {fileID: 6167617987783981515}
+  m_Layer: 6
+  m_Name: Ballister
+  m_TagString: Turret
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5931216648191894353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167617987783981512}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15, y: 84.7, z: 38.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6560471762385335975}
+  - {fileID: 7045719101637121042}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &922771477299069019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167617987783981512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfaa2e082d572564cb090aaa5758564e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableType: 0
+  uiFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  platformHeight: 4.2
+--- !u!114 &3203217585030608216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167617987783981512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d210e0fa7894f4abdc49d281e94100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnManager: {fileID: 0}
+  cost: 1
+  refundPercent: 0.5
+  rangeDisplayTimeLength: 1.5
+  towerPrefab: {fileID: 6167617987783981512}
+  costDisplay: {fileID: 0}
+  projectileSpeed: 4
+  range: 40
+  delay: 15
+  arcOffset: 200
+  projectile: {fileID: 2002128067967146123, guid: 1c5ea2e27bb1594459661580f8233f03, type: 3}
+  blastRadius: 0
+  damage: 15
+--- !u!65 &7495881091768854944
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167617987783981512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 57258324482757290}

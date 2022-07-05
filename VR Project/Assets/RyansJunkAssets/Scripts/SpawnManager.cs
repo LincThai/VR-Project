@@ -26,12 +26,6 @@ public class SpawnManager : MonoBehaviour
     public int enemyCount = 0;
     public int spawnCount = 0;
 
-    [Header("Audio GameObjects")]
-    public AudioSource breakAudio;
-    public AudioSource backgroundAudio;
-    public AudioSource towerSellAudio;
-    public AudioSource towerPickupAudio;
-
     bool newRound = false;
     bool gameStart = true;
 
@@ -41,7 +35,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //spawnCount = enemySpawnTotal;
+        spawnCount = enemySpawnTotal;
     }
 
     // Update is called once per frame
@@ -58,26 +52,13 @@ public class SpawnManager : MonoBehaviour
             startButton.SetActive(true);
         }
 
-        if (newRound == false)
-        {
-            breakAudio.mute = false;
-            backgroundAudio.mute = true;
-        }
-        else
-        {
-            breakAudio.mute = true;
-            backgroundAudio.mute = false;
-        }
-
-
-
-        if (t > 10.0f && tested == false)
-        {
-            tested = true;
-            newRound = false;
-            NewRound();
-        }
-        t += Time.deltaTime;
+        //if (t > 10.0f && tested == false)
+        //{
+        //    tested = true;
+        //    newRound = false;
+        //    NewRound();
+        //}
+        //t += Time.deltaTime;
     }
 
     public void IncrementCounts()

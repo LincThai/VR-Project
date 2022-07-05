@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc17da9834ad15a4ab683be85bcd769f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   health: 30
   goldDrop: 5
 --- !u!114 &7925692670589642973
@@ -96,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.2, z: 3}
-  m_Center: {x: 0, y: 0.6, z: 0}
+  m_Size: {x: 2, y: 2, z: 3}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &5579691689249372727
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,6 +115,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &506519553
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075298702933531674}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03caa6af5cc5242448d33073ad9fdca7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6381216025462153547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -257,6 +277,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7807634055741096743, guid: 6daa78db58219004ca223cb975440ec5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b11cb650ec7d6aa4ebd4d54df2c2a3d7, type: 2}
+    - target: {fileID: 7807634055741096743, guid: 6daa78db58219004ca223cb975440ec5, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b11cb650ec7d6aa4ebd4d54df2c2a3d7, type: 2}
     - target: {fileID: 8195427407764941624, guid: 6daa78db58219004ca223cb975440ec5, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -279,6 +307,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6daa78db58219004ca223cb975440ec5, type: 3}
+--- !u!1 &6075298702933531674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6daa78db58219004ca223cb975440ec5, type: 3}
+  m_PrefabInstance: {fileID: 6381216025462153547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6846627398248482464 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6daa78db58219004ca223cb975440ec5, type: 3}

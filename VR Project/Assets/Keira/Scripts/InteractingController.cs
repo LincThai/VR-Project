@@ -39,7 +39,7 @@ public class InteractingController : MonoBehaviour
     [Tooltip("environment every item is childed to, to make the whole level move-able")]
     public Transform environment;
     [Tooltip("the offset to set the environment to from the controller")]
-    public Vector3 environmentOffset;
+    public float environmentOffset;
 
     //ball thing - dumb ball renderer wont let me turn it off :(
     MeshRenderer ballRenderer;
@@ -315,7 +315,7 @@ public class InteractingController : MonoBehaviour
         if (environment != null)
         {
 
-            environment.position = this.transform.position + environmentOffset.x * this.transform.forward + environmentOffset.y * this.transform.forward + environmentOffset.z * this.transform.forward;
+            environment.position = this.transform.position + environmentOffset * this.transform.forward;
             environment.eulerAngles.Set(0, this.transform.eulerAngles.x, 0);
  
 

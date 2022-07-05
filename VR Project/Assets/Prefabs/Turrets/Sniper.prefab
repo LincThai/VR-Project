@@ -71,7 +71,7 @@ MonoBehaviour:
   rangeDisplayTimeLength: 1.5
   towerPrefab: {fileID: 1903878889677041588}
   costDisplay: {fileID: 0}
-  projectileSpeed: 5
+  projectileSpeed: 20
   range: 50
   delay: 8
   arcOffset: 0

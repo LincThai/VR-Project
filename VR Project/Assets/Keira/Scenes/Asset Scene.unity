@@ -4199,8 +4199,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 423752619}
   - {fileID: 809698720}
+  - {fileID: 423752619}
   - {fileID: 1373608288}
   m_Father: {fileID: 1329358766}
   m_RootOrder: 2
@@ -5032,6 +5032,10 @@ PrefabInstance:
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1777601465776648764, guid: b7f7f2975b673af4e80c81a8c531ce6d, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777601465776648764, guid: b7f7f2975b673af4e80c81a8c531ce6d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 72.75
       objectReference: {fileID: 0}
@@ -5115,6 +5119,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mortar
       objectReference: {fileID: 0}
+    - target: {fileID: 9074922976452772493, guid: b7f7f2975b673af4e80c81a8c531ce6d, type: 3}
+      propertyPath: costDisplay
+      value: 
+      objectReference: {fileID: 531856868}
+    - target: {fileID: 9074922976452772493, guid: b7f7f2975b673af4e80c81a8c531ce6d, type: 3}
+      propertyPath: spawnManager
+      value: 
+      objectReference: {fileID: 1295127191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7f7f2975b673af4e80c81a8c531ce6d, type: 3}
 --- !u!4 &423752619 stripped
@@ -8956,7 +8968,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 501909203917047581, guid: bf0889313fc5fbd4d829f51d2b035068, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 501909203917047581, guid: bf0889313fc5fbd4d829f51d2b035068, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8970,6 +8982,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sniper
       objectReference: {fileID: 0}
+    - target: {fileID: 6742460689163468166, guid: bf0889313fc5fbd4d829f51d2b035068, type: 3}
+      propertyPath: costDisplay
+      value: 
+      objectReference: {fileID: 1408512332}
+    - target: {fileID: 6742460689163468166, guid: bf0889313fc5fbd4d829f51d2b035068, type: 3}
+      propertyPath: spawnManager
+      value: 
+      objectReference: {fileID: 1295127191}
     - target: {fileID: 8277923476136645475, guid: bf0889313fc5fbd4d829f51d2b035068, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -14069,6 +14089,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ballister
       objectReference: {fileID: 0}
+    - target: {fileID: 3203217585030608216, guid: f0f42e83f402e814281f613ed957a6f5, type: 3}
+      propertyPath: costDisplay
+      value: 
+      objectReference: {fileID: 1640636593}
+    - target: {fileID: 3203217585030608216, guid: f0f42e83f402e814281f613ed957a6f5, type: 3}
+      propertyPath: spawnManager
+      value: 
+      objectReference: {fileID: 1295127191}
     - target: {fileID: 5931216648191894353, guid: f0f42e83f402e814281f613ed957a6f5, type: 3}
       propertyPath: m_RootOrder
       value: 2

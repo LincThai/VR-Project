@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     SpawnManager spawnManager;
 
     [Tooltip("Enemy damage")]
-    public float damage;
+    public int damage;
     [Tooltip("Enemy health")]
     public float health;
     [Tooltip("How much gold the player gets for killing it.")]

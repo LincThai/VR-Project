@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc17da9834ad15a4ab683be85bcd769f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
   health: 25
   goldDrop: 10
 --- !u!114 &7648882767741047261
@@ -94,7 +95,7 @@ BoxCollider:
   m_GameObject: {fileID: 4040600576961007728}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3, y: 3.5, z: 3.5}
   m_Center: {x: 0, y: 2, z: 0}
@@ -196,6 +197,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -210826839640977578, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc295e43124e21340b8c4e2fe8d23181, type: 2}
+    - target: {fileID: -210826839640977578, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 85f810b031c83204ea4be6015071a1b6, type: 2}
     - target: {fileID: 919132149155446097, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
       propertyPath: m_Name
       value: Dapperfly

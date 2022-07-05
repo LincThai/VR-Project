@@ -122,7 +122,7 @@ public class Interactable : MonoBehaviour
 
     void RefreshTurret()
     {
-
+        
         GameObject newTower = Instantiate(tower.towerPrefab, tower.GetStartingPosition(), transform.rotation, tower.transform.parent);
         newTower.GetComponent<Tower>().spawnManager = tower.spawnManager; 
     }

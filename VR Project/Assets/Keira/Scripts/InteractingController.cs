@@ -36,14 +36,11 @@ public class InteractingController : MonoBehaviour
     public GameObject ballChild;
     [Tooltip("Temp node I am using to see position of certain things")]
     public GameObject node;
-    [Tooltip("environment every item is childed to, to make the whole level move-able")]
-    public Transform environment;
-    [Tooltip("the offset to set the environment to from the controller")]
-    public Vector3 environmentOffset;
+
 
     //ball thing - dumb ball renderer wont let me turn it off :(
     MeshRenderer ballRenderer;
-
+     
 
 
     //Raycast data - Data needed to properly process grabbings items
@@ -304,20 +301,6 @@ public class InteractingController : MonoBehaviour
         }
     }
 
-    public void SetEnvironmentPos(InputAction.CallbackContext interaction)
-    {
-        if (interaction.phase != InputActionPhase.Canceled)
-        {
-            return;
-        }
-        Debug.Log("SetEnvironmentPos called");
-
-        if (environment != null)
-        {
-            environment.position = this.transform.position + environmentOffset;
-            environment.rotation = this.transform.rotation;
-        }
-    }
 
     GameObject GetBaseParentOfTurret(GameObject turret)
     {

@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
 
     SpawnManager spawnManager;
 
+    public GameObject boomPrefab;
+
     List<GameObject> deleteList = new List<GameObject>();
 
     BezierCurve flightPath;
@@ -124,6 +126,10 @@ public class Projectile : MonoBehaviour
                         shellAudio.Play();
                         disabled = true;
                         Destroy(gameObject, 5);
+                        GameObject boom = Instantiate(boomPrefab, transform.position, transform.rotation);
+                        //boom.transform.localScale = new Vector3(blastRadius, blastRadius, blastRadius);
+                        boom.GetComponent<ParticleSystem>().transform.localScale = new Vector3(blastRadius, blastRadius, blastRadius);
+
                         gameObject.GetComponent<MeshRenderer>().enabled = false;
                         gameObject.GetComponent<SphereCollider>().enabled = false;
                     }

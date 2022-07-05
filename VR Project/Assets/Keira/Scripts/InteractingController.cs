@@ -314,8 +314,11 @@ public class InteractingController : MonoBehaviour
 
         if (environment != null)
         {
+
             environment.position = this.transform.position + environmentOffset;
-            environment.rotation = this.transform.rotation;
+            environment.forward = this.transform.forward ;
+ 
+
         }
     }
 

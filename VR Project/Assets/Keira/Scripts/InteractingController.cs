@@ -315,8 +315,8 @@ public class InteractingController : MonoBehaviour
         if (environment != null)
         {
 
-            environment.position = this.transform.position + environmentOffset;
-            environment.forward = this.transform.forward ;
+            environment.position = this.transform.position + environmentOffset.x * this.transform.forward + environmentOffset.y * this.transform.forward + environmentOffset.z * this.transform.forward;
+            environment.eulerAngles.Set(0, this.transform.eulerAngles.x, 0);
  
 
         }

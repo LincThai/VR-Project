@@ -41,6 +41,8 @@ public class Tower : MonoBehaviour
     [Tooltip("Projectile damage.")]
     public float damage;
 
+    AudioSource boomAudio;
+
     BoxCollider boxCollider;
 
     Vector3 startPosition;
@@ -48,12 +50,14 @@ public class Tower : MonoBehaviour
     float time = 0.0f;
     float rangeDisplayTimer = 0.0f;
     bool readyToShoot = true;
-    bool active = false;
+    bool active = true;
     bool used = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        boomAudio = GetComponent<AudioSource>();
+
         startPosition = transform.position;
 
         boxCollider = GetComponent<BoxCollider>();
@@ -112,6 +116,8 @@ public class Tower : MonoBehaviour
                     }
                     if (target != null)
                     {
+                        boomAudio.Play();
+
                         Vector3 predictedPosition = target.transform.position + (target.GetComponent<NavMeshAgent>().velocity * target.GetComponent<NavMeshAgent>().speed);
 
                         GameObject p = Instantiate(projectile, new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), transform.rotation);
@@ -122,6 +128,7 @@ public class Tower : MonoBehaviour
                         p.GetComponent<Projectile>().SetDamage(damage);
 
                         readyToShoot = false;
+                        time = 0.0f;
                     }
                 }
             }
@@ -132,7 +139,7 @@ public class Tower : MonoBehaviour
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, range);
+        //Gizmos.DrawWireSphere(transform.position, range);
     }
 
     public void ActivateTower()

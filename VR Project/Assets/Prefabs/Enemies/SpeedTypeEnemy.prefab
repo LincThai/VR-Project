@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc17da9834ad15a4ab683be85bcd769f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   health: 25
   goldDrop: 10
 --- !u!114 &7648882767741047261
@@ -94,7 +95,7 @@ BoxCollider:
   m_GameObject: {fileID: 4040600576961007728}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3, y: 3.5, z: 3.5}
   m_Center: {x: 0, y: 2, z: 0}

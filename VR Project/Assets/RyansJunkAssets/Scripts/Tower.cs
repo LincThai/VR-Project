@@ -47,6 +47,8 @@ public class Tower : MonoBehaviour
 
     Vector3 startPosition;
 
+    Quaternion startRotation;
+
     float time = 0.0f;
     float rangeDisplayTimer = 0.0f;
     bool readyToShoot = true;
@@ -59,6 +61,8 @@ public class Tower : MonoBehaviour
         boomAudio = GetComponent<AudioSource>();
 
         startPosition = transform.position;
+
+        startRotation = transform.rotation;
 
         boxCollider = GetComponent<BoxCollider>();
 
@@ -116,6 +120,7 @@ public class Tower : MonoBehaviour
                     }
                     if (target != null)
                     {
+                        transform.rotation = startRotation;
                         boomAudio.Play();
 
                         Vector3 predictedPosition;
@@ -125,7 +130,7 @@ public class Tower : MonoBehaviour
                         }
                         else
                         {
-                            predictedPosition = target.transform.position + (target.GetComponent<NavMeshAgent>().velocity * target.GetComponent<NavMeshAgent>().speed);
+                            predictedPosition = target.transform.position + (target.GetComponent<NavMeshAgent>().velocity); //  * target.GetComponent<NavMeshAgent>().speed
                         }
 
                         GameObject p = Instantiate(projectile, new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), transform.rotation);
@@ -134,6 +139,14 @@ public class Tower : MonoBehaviour
                         p.GetComponent<Projectile>().SetSpawnManager(spawnManager);
                         p.GetComponent<Projectile>().SetBlastRadius(blastRadius);
                         p.GetComponent<Projectile>().SetDamage(damage);
+
+                        Vector3 targetDirection = target.transform.position - transform.position;
+
+                        Quaternion newRotation = Quaternion.LookRotation(targetDirection);
+                        newRotation.z = 0;
+                        newRotation.x = 0;
+
+                        transform.rotation = newRotation;
 
                         readyToShoot = false;
                         time = 0.0f;
@@ -178,5 +191,10 @@ public class Tower : MonoBehaviour
     public void setAsUsed()
     {
         used = true;
+    }
+
+    void Rotate()
+    {
+        
     }
 }

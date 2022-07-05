@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnManager = myManager.GetComponent<SpawnManager>();
+        //spawnManager = myManager.GetComponent<SpawnManager>();
     }
 
     // Update is called once per frame

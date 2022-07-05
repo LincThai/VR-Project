@@ -50,7 +50,8 @@ public class Tower : MonoBehaviour
     float time = 0.0f;
     float rangeDisplayTimer = 0.0f;
     bool readyToShoot = true;
-    bool active = true;
+    [Tooltip("Keep as false, true is for testing purposes")]
+    public bool active = false;
     bool used = false;
 
     // Start is called before the first frame update

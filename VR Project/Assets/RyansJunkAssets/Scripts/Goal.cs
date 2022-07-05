@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Goal : MonoBehaviour
 
     [Header("Goal Variables")]
     [Tooltip("Players bases' health.")]
-    int health;
+    public int health;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,10 @@ public class Goal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (health >= 0)
+        {
+            SceneManager.LoadScene("LoseScene");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

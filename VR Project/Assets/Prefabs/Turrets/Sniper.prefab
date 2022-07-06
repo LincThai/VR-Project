@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 0}
-  cost: 15
+  cost: 100
   refundPercent: 0.5
   rangeDisplayTimeLength: 1.5
   towerPrefab: {fileID: 3800867172329110083}

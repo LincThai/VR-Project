@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
+  m_IndirectSpecularColor: {r: 0.28502586, g: 0.37139237, b: 0.4960093, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -381,7 +381,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dee68ab52f4c0f64da1379fe84a7d438, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7557,7 +7557,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 244f589e62b2b154497dbe7b1082faf0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -12826,7 +12826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2260fac6f3006f94c94394b0291bc290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 1000
+  gold: 100
   goldDisplay: {fileID: 237341304}
 --- !u!4 &1156217906
 Transform:
@@ -14158,7 +14158,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 14b531117205a8449beec414c5221d34, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 79821cf4f60cd3a409309fd6d8e0f0a5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
@@ -15552,6 +15552,10 @@ PrefabInstance:
       propertyPath: damage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3595434147365642227, guid: f0f42e83f402e814281f613ed957a6f5, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 6772483593050466082, guid: 33a3ca95ac6087f4dad573864159eb86, type: 3}
     - target: {fileID: 3595434147365642227, guid: f0f42e83f402e814281f613ed957a6f5, type: 3}
       propertyPath: costDisplay
       value: 
@@ -20127,7 +20131,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 313abef417bab4a4a8e2736e4b58deed, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 79821cf4f60cd3a409309fd6d8e0f0a5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
@@ -20905,7 +20909,7 @@ PrefabInstance:
       objectReference: {fileID: 706239570}
     - target: {fileID: 4009823678481179396, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: specialUnitChance
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4009823678481179396, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: spawners.Array.size
@@ -20915,6 +20919,10 @@ PrefabInstance:
       propertyPath: spawners.Array.data[0]
       value: 
       objectReference: {fileID: 348289299}
+    - target: {fileID: 4009823678481179396, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
+      propertyPath: specialUnitChanceIncrease
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4009823678481179397, guid: b91e40b58730c8840bcf9bd951cbd696, type: 3}
       propertyPath: m_Name
       value: SpawnManager

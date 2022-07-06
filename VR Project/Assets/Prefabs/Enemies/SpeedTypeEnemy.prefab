@@ -189,13 +189,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -6935687079284805244, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -6089751823619000223, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -6089751823619000223, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -4913296440103987566, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4913296440103987566, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: -210826839640977578, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -217,17 +229,33 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4554941377726143898, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5631134136168204362, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631134136168204362, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7132702775996101245, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7132702775996101245, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7386328558110383560, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386328558110383560, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffeb710eab85a6d45ba6eb8dfc59638d, type: 3}

@@ -41,6 +41,9 @@ public class Tower : MonoBehaviour
     [Tooltip("Projectile damage.")]
     public float damage;
 
+    // Animator
+    public Animator animator;
+
     BoxCollider boxCollider;
 
     Vector3 startPosition;
@@ -97,6 +100,7 @@ public class Tower : MonoBehaviour
             if (!readyToShoot && time >= delay)
             {
                 time = 0.0f;
+                animator.SetBool("IsReady", false);
                 readyToShoot = true;
             }
 
@@ -134,6 +138,7 @@ public class Tower : MonoBehaviour
 
                         transform.rotation = newRotation;
 
+                        animator.SetBool("IsReady", true);
                         readyToShoot = false;
                     }
                 }

@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 6a38e068921eb6f42aa08cbe8cac57e4
+guid: 8117affba2bbc924a9951f252a95a6e9
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -3720662839248984142
+    second: basicfrogfinaltest
   externalObjects: {}
   materials:
     materialImportMode: 2

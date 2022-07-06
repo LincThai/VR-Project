@@ -37,9 +37,10 @@ public class InteractingController : MonoBehaviour
     [Tooltip("Temp node I am using to see position of certain things")]
     public GameObject node;
 
+
     //ball thing - dumb ball renderer wont let me turn it off :(
     MeshRenderer ballRenderer;
-
+     
 
 
     //Raycast data - Data needed to properly process grabbings items
@@ -81,16 +82,16 @@ public class InteractingController : MonoBehaviour
         if (!isObjectHeld)
         {
             //raycast to do when no item is held
-            GeneralRaycast();   
+            GeneralRaycast();
         }
         else
         {
             //What do to when an item is held
             RaycastWhenItemHeld();
-        }   
+        }
     }
 
-    void GeneralRaycast ()
+    void GeneralRaycast()
     {
         laser.laserActive = true;
         //When holding an item, it needs to do a second raycast from this items position in the same direction to position it just above the surface
@@ -101,7 +102,7 @@ public class InteractingController : MonoBehaviour
             //Only care about what we hit if it is an 'interactable', but still need the raycast data if it hit something else
             GameObject objectHit = hit.transform.gameObject;
             if (objectHit.layer == LayerMask.NameToLayer(interactableLayer))
-            { 
+            {
                 lastObjectHit = objectHit;
 
                 Interactable interact = lastObjectHit.GetComponentInParent<Interactable>();
@@ -117,7 +118,7 @@ public class InteractingController : MonoBehaviour
                 {
                     Debug.LogWarning("Interactable object does not have a findable 'interactable' script attached");
                 }
-                
+
 
             }
             else
@@ -149,7 +150,7 @@ public class InteractingController : MonoBehaviour
         if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, maxRaycastLength, ~LayerMask.GetMask(interactableLayer, "Ignore Raycast")))
         {
 
-  
+
             /* 
              * Get point on ground of where turret currently is
              * Check for closest nodes, if closest in range is used
@@ -162,7 +163,7 @@ public class InteractingController : MonoBehaviour
             if (!nodeListUpdated)
             {
                 nodeListUpdated = true;
-                
+
                 nodeList = GameObject.FindGameObjectsWithTag(nodeTag);
             }
             GameObject closest = GetClosestOpenNode(nodeList, hit.point, out distance);
@@ -183,7 +184,7 @@ public class InteractingController : MonoBehaviour
             SetInteractBallDist(hit.distance);
             laser.SetLaserDistFromHand(hit.distance);
 
-        } else 
+        } else
         {
             SetHeldItemPosition(this.transform.position + (this.transform.forward * maxRaycastLength));
             SetInteractBallDist(maxRaycastLength);
@@ -194,7 +195,7 @@ public class InteractingController : MonoBehaviour
 
     void SetHeldItemPosition(Vector3 position)
     {
-        objectBeingHeld.transform.position = position; 
+        objectBeingHeld.transform.position = position;
     }
 
     GameObject GetClosestOpenNode(GameObject[] nodes, Vector3 position, out float outDistance)
@@ -300,39 +301,22 @@ public class InteractingController : MonoBehaviour
         }
     }
 
+
     GameObject GetBaseParentOfTurret(GameObject turret)
     {
         if (!turret.CompareTag(turretTag))
         {
             Debug.LogWarning("Wrong Object passed into function 'GetBaseParentOfTurret(GameObject Turret)' pls fix");
-            return turret;
+            return null;
         }
 
-        GameObject highestWithTag = turret;
-        GameObject higherParent = null;
+        GameObject highestObject = turret;
 
-        if (turret.transform.parent == null)
+        while (highestObject.transform.parent != null && highestObject.transform.parent.CompareTag(turretTag))
         {
-            Debug.Log("Early exit from 'GetBaseParentOfTurret'");
-            return highestWithTag;
-        } else
-        {
-            higherParent = turret.transform.parent.gameObject;
+            highestObject = highestObject.transform.parent.gameObject;
         }
-        
-        while (higherParent.CompareTag(turretTag) && higherParent.transform.parent != null)
-        {
-            highestWithTag = higherParent;
-            higherParent = higherParent.transform.parent.gameObject;
-        }
-        //not sure of a way I can incoperate the last part of this into the while loop
-        //It leaves the loop early due to the null check, but the check is required
-        if (higherParent.CompareTag(turretTag))
-        {
-            highestWithTag = higherParent;
-        }
-
-        return highestWithTag;
+        return highestObject;
     }
 
     void SetInteractBallDist(float distance)

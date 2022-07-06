@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7239587503517749149}
   - component: {fileID: 2743311605450507816}
   m_Layer: 6
-  m_Name: Ballister
+  m_Name: Ballista
   m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,6 +77,8 @@ MonoBehaviour:
   projectile: {fileID: 2002128067967146123, guid: 1c5ea2e27bb1594459661580f8233f03, type: 3}
   blastRadius: 20
   damage: 1
+  animator: {fileID: 3398671815905224450}
+  active: 0
 --- !u!65 &2743311605450507816
 BoxCollider:
   m_ObjectHideFlags: 0

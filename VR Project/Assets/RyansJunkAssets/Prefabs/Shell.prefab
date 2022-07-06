@@ -236,6 +236,14 @@ PrefabInstance:
       value: Spit
       objectReference: {fileID: 0}
     - target: {fileID: 8849605081942726718, guid: 110953de33fd25a47974210ef8c24660, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849605081942726718, guid: 110953de33fd25a47974210ef8c24660, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849605081942726718, guid: 110953de33fd25a47974210ef8c24660, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
       value: 0
       objectReference: {fileID: 0}

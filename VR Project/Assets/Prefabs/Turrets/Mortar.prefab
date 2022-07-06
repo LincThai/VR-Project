@@ -234,12 +234,13 @@ MonoBehaviour:
   towerPrefab: {fileID: 8820989964881030731}
   costDisplay: {fileID: 0}
   projectileSpeed: 0.3
-  range: 35
+  range: 70
   delay: 6
   arcOffset: 200
   projectile: {fileID: 2002128067967146123, guid: 1c5ea2e27bb1594459661580f8233f03, type: 3}
-  blastRadius: 20
-  damage: 6
+  blastRadius: 10
+  damage: 50
+  active: 1
 --- !u!65 &8935893972754873219
 BoxCollider:
   m_ObjectHideFlags: 0

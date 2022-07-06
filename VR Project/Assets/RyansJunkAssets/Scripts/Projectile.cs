@@ -20,6 +20,7 @@ public class Projectile : MonoBehaviour
     float damage;
 
     float t = 0.0f;
+    Vector3 lastPos;
     void Start()
     {
         shellAudio = GetComponent<AudioSource>();
@@ -47,6 +48,13 @@ public class Projectile : MonoBehaviour
 
         transform.position = new Vector3(flightPath.FindX(t), flightPath.FindY(t), flightPath.FindZ(t));
 
+        if (lastPos == transform.position)
+        {
+            Destroy(gameObject);
+        }
+
+        lastPos = transform.position;
+
         if (transform.position == flightPath.GetEnd())
         {
             Destroy(gameObject, 5);
@@ -57,6 +65,7 @@ public class Projectile : MonoBehaviour
     {
         flightPath = new BezierCurve(startPosition, new Vector3((startPosition.x + targetPosition.x) / 2, ((startPosition.y + targetPosition.y) / 2) + controlPointHeight, (startPosition.z + targetPosition.z) / 2), targetPosition);
         projectileSpeed = pSPeed;
+        lastPos = startPosition;
 
         //if (targetPosition == new Vector3((startPosition.x + targetPosition.x) / 2, ((startPosition.y + targetPosition.y) / 2) + controlPointHeight, (startPosition.z + targetPosition.z) / 2)) // wouldn't be surprised if this is bad
         //{
@@ -86,7 +95,12 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (disabled == false)
+        //if (collision.gameObject.CompareTag("Respawn"))
+        //{
+        //    blastRadius = 10;
+        //    blastRadius -= 10;
+        //}
+            if (disabled == false)
         {
             if (!collision.gameObject.CompareTag("Turret"))
             {

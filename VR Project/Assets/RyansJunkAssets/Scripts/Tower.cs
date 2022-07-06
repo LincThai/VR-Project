@@ -41,8 +41,6 @@ public class Tower : MonoBehaviour
     [Tooltip("Projectile damage.")]
     public float damage;
 
-    AudioSource boomAudio;
-
     BoxCollider boxCollider;
 
     Vector3 startPosition;
@@ -59,8 +57,6 @@ public class Tower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boomAudio = GetComponent<AudioSource>();
-
         startPosition = transform.position;
 
         startRotation = transform.rotation;
@@ -121,18 +117,7 @@ public class Tower : MonoBehaviour
                     }
                     if (target != null)
                     {
-                        transform.rotation = startRotation;
-                        boomAudio.Play();
-
-                        Vector3 predictedPosition;
-                        if (blastRadius == 0)
-                        {
-                            predictedPosition = target.transform.position;
-                        }
-                        else
-                        {
-                            predictedPosition = target.transform.position + (target.GetComponent<NavMeshAgent>().velocity); //  * target.GetComponent<NavMeshAgent>().speed
-                        }
+                        Vector3 predictedPosition = target.transform.position + (target.GetComponent<NavMeshAgent>().velocity * target.GetComponent<NavMeshAgent>().speed);
 
                         GameObject p = Instantiate(projectile, new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), transform.rotation);
 
@@ -150,7 +135,6 @@ public class Tower : MonoBehaviour
                         transform.rotation = newRotation;
 
                         readyToShoot = false;
-                        time = 0.0f;
                     }
                 }
             }
@@ -161,7 +145,7 @@ public class Tower : MonoBehaviour
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
-        //Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 
     public void ActivateTower()

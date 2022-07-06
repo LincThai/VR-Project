@@ -87,7 +87,7 @@ MonoBehaviour:
   cost: 1
   refundPercent: 0.5
   rangeDisplayTimeLength: 1.5
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 3800867172329110083}
   costDisplay: {fileID: 0}
   projectileSpeed: 20
   range: 50

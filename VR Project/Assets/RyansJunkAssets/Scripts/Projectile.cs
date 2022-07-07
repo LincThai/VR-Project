@@ -17,6 +17,11 @@ public class Projectile : MonoBehaviour
     float damage;
 
     float t = 0.0f;
+    Vector3 lastPos;
+    void Start()
+    {
+        shellAudio = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -40,6 +45,13 @@ public class Projectile : MonoBehaviour
 
         transform.position = new Vector3(flightPath.FindX(t), flightPath.FindY(t), flightPath.FindZ(t));
 
+        if (lastPos == transform.position)
+        {
+            Destroy(gameObject);
+        }
+
+        lastPos = transform.position;
+
         if (transform.position == flightPath.GetEnd())
         {
             Destroy(gameObject);
@@ -50,6 +62,7 @@ public class Projectile : MonoBehaviour
     {
         flightPath = new BezierCurve(startPosition, new Vector3((startPosition.x + targetPosition.x) / 2, ((startPosition.y + targetPosition.y) / 2) + controlPointHeight, (startPosition.z + targetPosition.z) / 2), targetPosition);
         projectileSpeed = pSPeed;
+        lastPos = startPosition;
 
         if (targetPosition == new Vector3((startPosition.x + targetPosition.x) / 2, ((startPosition.y + targetPosition.y) / 2) + controlPointHeight, (startPosition.z + targetPosition.z) / 2)) // wouldn't be surprised if this is bad
         {
@@ -74,7 +87,12 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Turret") && !collision.gameObject.CompareTag("Node"))
+        //if (collision.gameObject.CompareTag("Respawn"))
+        //{
+        //    blastRadius = 10;
+        //    blastRadius -= 10;
+        //}
+            if (disabled == false)
         {
             if (spawnManager.enemyList.Count != 0)
             {

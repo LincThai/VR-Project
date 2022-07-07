@@ -16,6 +16,10 @@ public class Projectile : MonoBehaviour
     float blastRadius;
     float damage;
 
+    AudioSource shellAudio;
+
+    bool disabled = false;
+
     float t = 0.0f;
     Vector3 lastPos;
     void Start()

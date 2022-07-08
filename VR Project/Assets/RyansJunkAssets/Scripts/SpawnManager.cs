@@ -40,6 +40,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         spawnCount = enemySpawnTotal;
+        UpdateRoundNum();
     }
 
     // Update is called once per frame

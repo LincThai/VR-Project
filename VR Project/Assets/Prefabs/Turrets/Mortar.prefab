@@ -111,7 +111,8 @@ GameObject:
   - component: {fileID: 2171339882643262219}
   - component: {fileID: 2253076883772333706}
   - component: {fileID: 9074922976452772493}
-  m_Layer: 6
+  - component: {fileID: 7064544859131250606}
+  m_Layer: 7
   m_Name: Mortar
   m_TagString: Turret
   m_Icon: {fileID: 0}
@@ -131,7 +132,6 @@ Transform:
   m_Children:
   - {fileID: 1723310073054006204}
   - {fileID: 5905834416209879717}
-  - {fileID: 9111570146464384462}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -179,44 +179,13 @@ MonoBehaviour:
   damage: 50
   animator: {fileID: 1483616609089241009}
   active: 0
---- !u!1 &8763426291181955080
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9111570146464384462}
-  - component: {fileID: 8112534349679795568}
-  m_Layer: 7
-  m_Name: Collider
-  m_TagString: Turret
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9111570146464384462
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763426291181955080}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2171339882643262219}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8112534349679795568
+--- !u!65 &7064544859131250606
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763426291181955080}
+  m_GameObject: {fileID: 8737598126674163560}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

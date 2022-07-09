@@ -122,7 +122,7 @@ MonoBehaviour:
   projectile: {fileID: 2379905791008495486, guid: 9e2d84fddab8a7f4d87ddcf141b8b9a2, type: 3}
   blastRadius: 0
   damage: 30
-  animator: {fileID: 0}
+  animator: {fileID: 8497758016086758067}
   active: 0
 --- !u!23 &3539182299810628345
 MeshRenderer:

@@ -140,7 +140,7 @@ MonoBehaviour:
   projectile: {fileID: 2002128067967146123, guid: 1c5ea2e27bb1594459661580f8233f03, type: 3}
   blastRadius: 0
   damage: 100
-  animator: {fileID: 0}
+  animator: {fileID: 2635163316305722429}
   active: 0
 --- !u!1 &6106065576045975500
 GameObject:

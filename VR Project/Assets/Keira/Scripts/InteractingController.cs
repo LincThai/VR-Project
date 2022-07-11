@@ -229,7 +229,7 @@ public class InteractingController : MonoBehaviour
         {
             return;
         }
-        Debug.Log("AttemptInteract Called");
+
 
         interactButtonHeldLastFrame = true;
         if (maxTimeToGrab > timeSinceLastRaycastHit && !isObjectHeld)
@@ -237,13 +237,13 @@ public class InteractingController : MonoBehaviour
             //'grab' item
             if (lastObjectHit.CompareTag(turretTag) || lastObjectHit.CompareTag(uiTag))
             {
-                Debug.Log("Get 'Turret' from LastObjectHit (1)");
+
                 Interactable turret = lastObjectHit.GetComponentInParent<Interactable>();
 
 
                 if (turret.CanBeGrabbed(moneyManager))
                 {
-                    Debug.Log("Object could be grabbed!");
+
                     isObjectHeld = true;
                     objectBeingHeld = GetBaseParentOfTurret(lastObjectHit);
 

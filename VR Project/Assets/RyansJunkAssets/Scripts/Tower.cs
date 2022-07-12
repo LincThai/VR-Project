@@ -121,7 +121,18 @@ public class Tower : MonoBehaviour
                     }
                     if (target != null)
                     {
-                        Vector3 predictedPosition = target.transform.position + (target.GetComponent<NavMeshAgent>().velocity * target.GetComponent<NavMeshAgent>().speed);
+                        transform.rotation = startRotation;
+                        boomAudio.Play();
+
+                        Vector3 predictedPosition;
+                        if (blastRadius == 0)
+                        {
+                            predictedPosition = target.transform.position;
+                        }
+                        else
+                        {
+                            predictedPosition = target.transform.position + (target.GetComponent<NavMeshAgent>().velocity); //  * target.GetComponent<NavMeshAgent>().speed
+                        }
 
                         GameObject p = Instantiate(projectile, new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.max.y, boxCollider.bounds.center.z), transform.rotation);
 
@@ -138,8 +149,8 @@ public class Tower : MonoBehaviour
 
                         transform.rotation = newRotation;
 
-                        animator.SetBool("IsReady", true);
                         readyToShoot = false;
+                        time = 0.0f;
                     }
                 }
             }

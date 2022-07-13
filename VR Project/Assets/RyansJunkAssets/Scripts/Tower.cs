@@ -149,6 +149,7 @@ public class Tower : MonoBehaviour
 
                         transform.rotation = newRotation;
 
+                        animator.SetBool("IsReady", false);
                         readyToShoot = false;
                         time = 0.0f;
                     }

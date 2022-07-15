@@ -44,6 +44,8 @@ public class Tower : MonoBehaviour
     // Animator
     public Animator animator;
 
+    AudioSource boomAudio;
+
     BoxCollider boxCollider;
 
     Vector3 startPosition;
@@ -60,6 +62,8 @@ public class Tower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        boomAudio = GetComponent<AudioSource>();
+
         startPosition = transform.position;
 
         startRotation = transform.rotation;
